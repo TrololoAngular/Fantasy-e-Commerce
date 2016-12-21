@@ -1,0 +1,8 @@
+<p>
+  products works!
+</p>
+<ul class="nav"> 
+  <li *ngFor="let item of items | async">
+    {{item.$value}}
+  </li>
+</ul>
