@@ -1,0 +1,51 @@
+header{
+  display: table;
+  width: 100%;
+  padding:20px;
+  background-color: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  color: white;
+  z-index:9999;
+}
+.brand{
+  font-family: 'Tangerine', cursive;
+  font-size: 60px;
+  line-height: 40px;
+}
+.brand, header nav {
+  display: table-cell;
+  vertical-align: middle;
+}
+.brand a, nav a, .menu-dropdown-button,.caret{
+  color:white;
+  text-decoration: none;
+}
+.menu-dropdown-button{
+  background:none;
+  border:none;
+  text-transform: uppercase;
+  font-weight:500;
+}
+header li.open .menu-dropdown-button,
+.menu-dropdown-button:hover
+{
+  color: #b0c9d4;
+}
+
+#mainNav{
+  text-align: center;
+}
+.brand, #userNav {
+  width: 20%;
+}
+#userNav{
+  text-align:right;
+}
+nav ul {
+  margin-bottom: 0px;
+}
+header li {
+  list-style: none;
+  display: initial;
+  margin-right: 10px;
+}

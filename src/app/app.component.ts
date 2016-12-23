@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders } from 'angularfire2';
 
+import { HeaderComponent } from './header/header.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,7 +36,7 @@ export class AppComponent {
     provider: AuthProviders.Google
   });
 }
- 
+
 logout() {
   this.af.auth.logout();
 }
