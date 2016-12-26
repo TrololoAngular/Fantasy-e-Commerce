@@ -1,8 +1,11 @@
+import './rxjs-extensions';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import { CollapseModule   } from 'ng2-bootstrap';
 
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
@@ -12,18 +15,21 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { BookCategoriesComponent } from './book-categories/book-categories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    BookCategoriesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     CollapseModule  .forRoot(),
     AngularFireModule.initializeApp(firebaseConfig,
     {
@@ -34,6 +40,10 @@ import { HomeComponent } from './home/home.component';
     {
       path: 'products',
       component: ProductsComponent
+    },
+    {
+      path: 'books/categories/:categoryName',
+      component: BookCategoriesComponent
     },
     {
       path:"",

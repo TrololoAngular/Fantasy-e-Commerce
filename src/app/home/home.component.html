@@ -7,3 +7,24 @@
       </div>
   </div>
 </div>
+<div>
+  <ul>
+    <li>Books</li>
+    <li>Jewellery</li>
+    <li>Clothing</li>
+  </ul>
+</div>
+<div id="book-categories">
+  <div *ngFor="let category of categories | async">
+    <div>
+      <a routerLink="/books/categories/{{category.categoryName}}">{{category.categoryName}}</a>
+    </div>
+  </div>
+  <!--<category-list [bookCategories]="bookC"></category-list>-->
+</div>
+<div id="jewellery-categories">
+  <!--<category-list></category-list>-->
+</div>
+<div id="clothing-categries">
+  <!--<category-list></category-list>-->
+</div>
