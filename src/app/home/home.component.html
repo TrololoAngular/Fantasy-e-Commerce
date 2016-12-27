@@ -7,53 +7,67 @@
       </div>
   </div>
 </div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
-      <ul class="Aligner wrap-content main-categories-list">
-        <li class="Aligner main-category-holder" style="background-image: url('../../assets/images/fantasy-book.jpg')">
+<article id="main-categories">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="Aligner wrap-content main-categories-list margin-top-50px">
+          <li class="Aligner main-category-holder" style="background-image: url('../../assets/images/fantasy-book.jpg')">
             <div class="main-category-box">
-              <p class="text-center white-font script-font">Custom Category Subtitle</p>
+              <p class="text-center white-font script-font subtitle">Custom Category Subtitle</p>
               <h2 class="main-category white-font">
                 Fantasy Books
               </h2>
               <a href="#" class="cta small">Shop Now</a>
             </div>
-        </li>
-        <li class="Aligner main-category-holder" style="background-image: url('../../assets/images/elf-tiara.jpg')">
-          <div class="main-category-box">
-            <p class="text-center white-font script-font">Custom Category Subtitle</p>
-            <h2 class="main-category white-font">
-              Fantasy Jewellery
-            </h2>
-            <a href="#" class="cta small">Shop Now</a>
-          </div>
-        </li>
-        <li class="Aligner main-category-holder" style="background-image: url('../../assets/images/clothing.jpg')">
+          </li>
+          <li class="Aligner main-category-holder" style="background-image: url('../../assets/images/elf-tiara.jpg')">
             <div class="main-category-box">
-              <p class="text-center white-font script-font">Custom Category Subtitle</p>
+              <p class="text-center white-font script-font subtitle">Custom Category Subtitle</p>
+              <h2 class="main-category white-font">
+                Fantasy Jewellery
+              </h2>
+              <a href="#" class="cta small">Shop Now</a>
+            </div>
+          </li>
+          <li class="Aligner main-category-holder" style="background-image: url('../../assets/images/rogue-cosplay.jpg')">
+            <div class="main-category-box">
+              <p class="text-center white-font script-font subtitle">Custom Category Subtitle</p>
               <h2 class="main-category white-font">
                 Fantasy Clothing
               </h2>
               <a href="#" class="cta small">Shop Now</a>
             </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div id="book-categories">
+  <div class="container">
+    <div class="row">
+      <div class="col=sm-12">
+        <h2 class="text-center margin-top-50px">Book Forest Value Proposition</h2>
+        <hr>
+        <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<section id="book-categories">
   <div *ngFor="let category of categories | async">
     <div>
       <a routerLink="/books/categories/{{category.categoryName}}">{{category.categoryName}}</a>
     </div>
   </div>
   <!--<category-list [bookCategories]="bookC"></category-list>-->
-</div>
-<div id="jewellery-categories">
+</section>
+<section id="jewellery-categories">
   <!--<category-list></category-list>-->
-</div>
-<div id="clothing-categries">
+</section>
+<section id="clothing-categories">
   <!--<category-list></category-list>-->
-</div>
+</section>
+
 <!--<product-bar></product-bar>-->
