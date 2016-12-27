@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders } from 'angularfire2';
 
+import { BookCategoriesService } from './book-categories/book-categories.service';
+
 import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  providers: [ BookCategoriesService ],
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   loggedIn: Boolean = false;
   user = {};
 

@@ -11,8 +11,5 @@ export class HomeComponent {
 
   constructor(private af: AngularFire){
     this.categories = af.database.list('/books');
-    console.log("Categories: ", this.categories);
   }
-
-
 }

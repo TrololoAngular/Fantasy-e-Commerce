@@ -1,29 +1,41 @@
+
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
+import { BookCategoriesService } from './book-categories.service';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-book-categories',
   templateUrl: './book-categories.component.html',
   styleUrls: ['./book-categories.component.css']
 })
-export class BookCategoriesComponent implements OnInit {
-  category:  FirebaseListObservable<any[]>;
+export class BookCategoriesComponent implements OnInit{
+  categoryName: string;
+  category: any;
 
   constructor(
-    private af: AngularFire,
+    private categoryService: BookCategoriesService,
     private route: ActivatedRoute,
     private location: Location
-  ) {  }
+  ) {}
 
   ngOnInit(): void {
+
     this.route.params
-      .switchMap((params: Params) => this.af.database.list('books/'+params['categoryName']))
-      .subscribe(categories => this.category = categories);
+    .subscribe((parameters) => this.categoryName = parameters['categoryName']);
+
+    const category$ = this.categoryService.getBookCategoryByName(this.categoryName);
+    category$.subscribe(result => {
+      this.category = result;
+    });
+
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

@@ -1,9 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+/*box classes*/
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+.wrap-content {
+  flex-wrap:wrap;
+}
+
+.evenly-spaced{
+  justify-content:space-between;
+}
+
+/*List styles*/
+li{
+  list-style: none;
+}
+
+/*paragraph classes*/
+.script-font{
+  font-family: 'Tangerine', cursive;
+}
+.white-font{
+  color:#fff;
+}
+.text-center {
+  text-align: center;
+}
+
+/*menu classes*/
 .dropdown-menu{
   display: initial;
   top:120%!important;
   transition: all 0.8s !important;
 }
+
 .open > .dropdown-menu {
   top:100%!important;
 }
@@ -13,4 +50,27 @@
 }
 header li.open .dropdown-toggle::after {
   transform: rotate(-180deg);
+}
+
+/*button classes*/
+.cta {
+  text-align: center;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 50px;
+  display: block;
+  margin: auto;
+}
+.cta:hover,
+.cta:focus,
+.cta:active{
+  text-decoration: none;
+  background: #228d99;
+  border-color: #228d99;
+  font-weight: 500;
+  color:#fff;
+}
+.cta.small{
+  padding:5px 15px;
 }
