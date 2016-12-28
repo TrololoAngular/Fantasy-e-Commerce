@@ -28,6 +28,10 @@ li{
 }
 
 /*paragraph classes*/
+h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight:700;
+}
 .script-font{
   font-family: 'Tangerine', cursive;
 }
@@ -36,6 +40,13 @@ li{
 }
 .text-center {
   text-align: center;
+}
+.custom-subtitle{
+  text-transform:initial;
+  margin-top: -30px;
+  font-size: 3em;
+  color: #228d99;
+  font-weight: 300;
 }
 .subtitle {
   font-size: 25px;
@@ -83,7 +94,11 @@ header li.open .dropdown-toggle::after {
   padding:5px 15px;
   font-size:initial;
 }
-
+.cta-default {
+  color: #228d99;
+  border-color: #228d99;
+  margin: 0;
+}
 hr {
   height: 3px;
   width:20%;

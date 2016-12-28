@@ -9,4 +9,7 @@ import { FirebaseListObservable } from 'angularfire2';
 export class HomeCategoryDetailsComponent {
   @Input()
   category: any;
+  position: string;
+
+
 }
