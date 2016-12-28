@@ -18,7 +18,6 @@ export class HomeComponent {
     const bookCat$ = this.booksService.getAllBookCategories();
     bookCat$.subscribe(result => {
       this.bookCategory = result;
-      console.log("Book categories: ", this.bookCategory);
     });
   }
 

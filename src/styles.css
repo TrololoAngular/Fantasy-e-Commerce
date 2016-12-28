@@ -18,6 +18,10 @@
   justify-content:space-between;
 }
 
+.margin-top-50px{
+  margin-top:50px;
+}
+
 /*List styles*/
 li{
   list-style: none;
@@ -32,6 +36,9 @@ li{
 }
 .text-center {
   text-align: center;
+}
+.subtitle {
+  font-size: 25px;
 }
 
 /*menu classes*/
@@ -61,6 +68,7 @@ header li.open .dropdown-toggle::after {
   padding: 5px 50px;
   display: block;
   margin: auto;
+  width:180px;
 }
 .cta:hover,
 .cta:focus,
@@ -73,4 +81,13 @@ header li.open .dropdown-toggle::after {
 }
 .cta.small{
   padding:5px 15px;
+  font-size:initial;
+}
+
+hr {
+  height: 3px;
+  width:20%;
+  color: #228d99;
+  background-color: #228d99;
+  border: none;
 }
