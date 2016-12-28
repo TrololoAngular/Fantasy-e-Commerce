@@ -22,6 +22,7 @@ import { BookCategoriesComponent } from './book-categories/book-categories.compo
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
 import { ProductBarComponent } from './product-bar/product-bar.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductBarComponent } from './product-bar/product-bar.component';
     HomeComponent,
     HomeCategoryDetailsComponent,
     BookCategoriesComponent,
-    ProductBarComponent
+    ProductBarComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,10 @@ import { ProductBarComponent } from './product-bar/product-bar.component';
       method: AuthMethods.Popup
     }),
     RouterModule.forRoot([
+    {
+      path: 'categories',
+      component: CategoriesComponent
+    },
     {
       path: 'products',
       component: ProductsComponent
