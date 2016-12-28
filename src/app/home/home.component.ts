@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BookCategoriesService } from '../book-categories/book-categories.service';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ProductBarComponent } from './../product-bar/product-bar.component';
 
 @Component ({
@@ -11,6 +11,7 @@ import { ProductBarComponent } from './../product-bar/product-bar.component';
 })
 export class HomeComponent {
   bookCategory: FirebaseListObservable<any[]>;
+  jewelleryCategory: FirebaseObjectObservable<any>;
 
   constructor(private booksService: BookCategoriesService){ }
 
@@ -18,6 +19,12 @@ export class HomeComponent {
     const bookCat$ = this.booksService.getAllBookCategories();
     bookCat$.subscribe(result => {
       this.bookCategory = result;
+    });
+
+    const jewelleryCat$ = this.booksService.getJewelleryCategory();
+    jewelleryCat$.subscribe(result => {
+      this.jewelleryCategory = result;
+      console.log("Jewellery: ", this.jewelleryCategory);
     });
   }
 
