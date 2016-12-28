@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ProductBarComponent } from './../product-bar/product-bar.component';
 
 @Component ({
   selector: 'app-home',
