@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BookCategoriesService } from '../book-categories/book-categories.service';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ProductBarComponent } from './../product-bar/product-bar.component';
 
 @Component ({
   selector: 'app-home',

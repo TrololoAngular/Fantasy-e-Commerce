@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { CarouselModule } from 'ng2-bootstrap';
 
 import { CollapseModule   } from 'ng2-bootstrap';
 
@@ -20,6 +21,7 @@ import { BookCategoriesComponent } from './book-categories/book-categories.compo
 
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
+import { ProductBarComponent } from './product-bar/product-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { BookCategoriesService } from './book-categories/book-categories.service
     HeaderComponent,
     HomeComponent,
     HomeCategoryDetailsComponent,
-    BookCategoriesComponent
+    BookCategoriesComponent,
+    ProductBarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     CollapseModule.forRoot(),
+    CarouselModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig,
     {
       provider: AuthProviders.Google,
