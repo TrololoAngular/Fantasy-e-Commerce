@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { HomeCategoryDetailsComponent } from './home/home.category-details.component';
 import { BookCategoriesComponent } from './book-categories/book-categories.component';
 
 //Services
@@ -26,6 +27,7 @@ import { BookCategoriesService } from './book-categories/book-categories.service
     ProductsComponent,
     HeaderComponent,
     HomeComponent,
+    HomeCategoryDetailsComponent,
     BookCategoriesComponent
   ],
   imports: [

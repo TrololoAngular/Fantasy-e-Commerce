@@ -52,22 +52,15 @@
       </div>
     </div>
   </div>
-
 </article>
-
 <section id="book-categories">
-  <div *ngFor="let category of categories | async">
-    <div>
-      <a routerLink="/books/categories/{{category.categoryName}}">{{category.categoryName}}</a>
-    </div>
-  </div>
-  <!--<category-list [bookCategories]="bookC"></category-list>-->
+  <category-details [category]="bookCategory"></category-details>
 </section>
 <section id="jewellery-categories">
-  <!--<category-list></category-list>-->
+  <!--<category-details></category-details>-->
 </section>
 <section id="clothing-categories">
-  <!--<category-list></category-list>-->
+  <!--<category-details></category-details>-->
 </section>
 
 <!--<product-bar></product-bar>-->

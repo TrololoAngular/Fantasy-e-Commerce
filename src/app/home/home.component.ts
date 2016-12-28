@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BookCategoriesService } from '../book-categories/book-categories.service';
+
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component ({
@@ -7,9 +9,16 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   styleUrls:["./home.component.css"]
 })
 export class HomeComponent {
-  categories: FirebaseListObservable<any[]>;
+  bookCategory: FirebaseListObservable<any[]>;
 
-  constructor(private af: AngularFire){
-    this.categories = af.database.list('/books');
+  constructor(private booksService: BookCategoriesService){ }
+
+  ngOnInit(): void {
+    const bookCat$ = this.booksService.getAllBookCategories();
+    bookCat$.subscribe(result => {
+      this.bookCategory = result;
+      console.log("Book categories: ", this.bookCategory);
+    });
   }
+
 }
