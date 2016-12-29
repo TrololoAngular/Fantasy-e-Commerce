@@ -22,7 +22,6 @@ export class HeaderComponent{
 
   public alert() {
     var register = $(".register");
-    console.log("Jquery: ", register);
   }
 }
 

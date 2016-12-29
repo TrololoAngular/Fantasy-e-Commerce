@@ -19,12 +19,30 @@
 
 .main-categories-list{
   padding:0px;
+  margin:50px 0;
 }
 
 .Aligner-item img {
   max-height: 250px;
   width: 100%;
   filter: sepia(100%);
+}
+.tree-icon {
+  background-image: url(../../assets/images/tree.png);
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  filter: invert(1);
+  margin:auto;
+}
+.full-width-box{
+  width:100vw;
+  background:#228d99;
+  padding:45px;
+  height:400px;
+}
+.full-width-box hr{
+  background:#fff;
 }
 .main-category{
   text-align: center;

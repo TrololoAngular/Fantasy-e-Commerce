@@ -10,7 +10,33 @@
       </p>
       by <a href="">Paulette Jiles</a>
       <div class="ratings-display">
-        <ai-star [(ngModel)]="starsCount"></ai-star>
+        <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
+      </div>
+    </li>
+    <li>
+    <a href="#" class="carousel-image-link">
+      <img class="full-shadow" src="http://prodimage.images-bn.com/pimages/9780062409201_p0_v5_s476x646.jpg">
+      <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
+    </a>
+    <p class="record-spotlight-title">
+      <a href="#">News of the World</a>
+    </p>
+    by <a href="">Paulette Jiles</a>
+    <div class="ratings-display">
+      <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
+    </div>
+  </li>
+    <li>
+      <a href="#" class="carousel-image-link">
+        <img class="full-shadow" src="http://prodimage.images-bn.com/pimages/9780062409201_p0_v5_s476x646.jpg">
+        <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
+      </a>
+      <p class="record-spotlight-title">
+        <a href="#">News of the World</a>
+      </p>
+      by <a href="">Paulette Jiles</a>
+      <div class="ratings-display">
+        <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
       </div>
     </li>
     <li>
@@ -23,26 +49,9 @@
       </p>
       by <a href="">Paulette Jiles</a>
       <div class="ratings-display">
-        <ai-star [(ngModel)]="starsCount"></ai-star>
+        <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
       </div>
     </li>
   </ul>
 </div>
 
-
-
-
-
-<!--<div class="row">-->
-  <!--<div class="col-md-8">-->
-    <!--<carousel [interval]="myInterval" [noWrap]="noWrapSlides">-->
-      <!--<slide *ngFor="let slidez of slides; let index=index"-->
-             <!--[active]="slidez.active">-->
-        <!--<img [src]="slidez.image" style="margin-left: 20%;">-->
-        <!--<div style="display: inline-block">-->
-          <!--<h4>Slide {{index}}</h4> -->
-          <!--<p>{{slidez.text}}</p>-->
-        <!--</div>-->
-      <!--</slide>-->
-    <!--</carousel>-->
-<!--</div>-->

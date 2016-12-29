@@ -23,7 +23,6 @@ export class HomeCategoryDetailsComponent {
     const subCategories$ = this.booksService.getSubcategoryByType(`${this.mainCategory.subCategories}`);
     subCategories$.subscribe(result => {
       this.subCategories = result;
-      console.log("Sub categories: ", this.subCategories);
     });
   }
 
