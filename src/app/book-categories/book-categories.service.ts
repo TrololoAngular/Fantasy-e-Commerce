@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/do';
+import { Observable, Subject } from 'rxjs/Observable';
+import { Http } from '@angular2/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -15,15 +13,18 @@ export class BookCategoriesService {
     return result;
   }
 
-  getJewelleryCategory(){
-    const jewellery = this.af.database.object('/jewellery/categories');
-    console.log("jew: ", jewellery);
-    return jewellery;
+  getMainCategories(){
+    const mainCategories = this.af.database.list('/mainCategories');
+    return mainCategories;
   }
 
-  getBookCategoryByName(name: string) {
-    name = name.toLowerCase();
-    return this.af.database.object('/books/'+ name);
+  getBookSubcategories() {
+    const bookCategories = this.af.database.list('/bookCategories');
+    return bookCategories;
   }
 
+  getSubcategoryByType(type: string): Observable<any> {
+    const subCategory = this.af.database.object(`/${type}`);
+    return subCategory;
+  }
 }

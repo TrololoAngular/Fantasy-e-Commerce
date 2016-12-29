@@ -1,35 +1,35 @@
 <div class="container margin-top-50px">
-  <div class="row" *ngIf="leftPosition">
+  <div class="row" *ngIf="mainCategory.leftPosition">
     <div  class="col-sm-6">
       <ul class="Aligner wrap-content subcategory-list">
-        <li *ngFor="let subCategory of category"  class="Aligner subcategory">
-          <a routerLink="/books/categories/{{subCategory.categoryName}}" class="white-font">
-            <h6 class="subcategory-heading">{{subCategory.categoryName}}</h6>
+        <li *ngFor="let subCategory of subCategories"  class="Aligner subcategory">
+          <a routerLink="/books/categories/{{subCategory.title}}" class="white-font">
+            <h6 class="subcategory-heading">{{subCategory.title}}</h6>
             <img src="{{subCategory.imageUrl}}">
           </a>
         </li>
       </ul>
     </div>
     <div class="col-sm-6">
-      <h3>Book Category</h3>
-      <h4 class="script-font custom-subtitle">Book Category Subheading</h4>
-      <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."</p>
+      <h3>{{mainCategory.title}}</h3>
+      <h4 class="script-font custom-subtitle">{{mainCategory.subtitle}}</h4>
+      <p>{{mainCategory.description}}</p>
       <a href="#" class="cta cta-default">Shop Now</a>
     </div>
   </div>
 
-  <div class="row" *ngIf="!leftPosition">
-    <div  class="col-sm-6">
-      <h3>Book Category</h3>
-      <h4 class="script-font custom-subtitle">Book Category Subheading</h4>
-      <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."</p>
+  <div class="row" *ngIf="!mainCategory.leftPosition">
+    <div class="col-sm-6">
+      <h3>{{mainCategory.title}}</h3>
+      <h4 class="script-font custom-subtitle">{{mainCategory.subtitle}}</h4>
+      <p>{{mainCategory.description}}</p>
       <a href="#" class="cta cta-default">Shop Now</a>
     </div>
     <div class="col-sm-6">
       <ul class="Aligner wrap-content subcategory-list">
-        <li *ngFor="let subCategory of category?.categories"  class="Aligner subcategory">
-          <a routerLink="/books/categories/{{subCategory.categoryName}}" class="white-font">
-            <h6 class="subcategory-heading">{{subCategory.categoryName}}</h6>
+        <li *ngFor="let subCategory of subCategories"  class="Aligner subcategory">
+          <a routerLink="/books/categories/{{subCategory.title}}" class="white-font">
+            <h6 class="subcategory-heading">{{subCategory.title}}</h6>
             <img src="{{subCategory.imageUrl}}">
           </a>
         </li>

@@ -24,6 +24,9 @@ import { BookCategoriesService } from './book-categories/book-categories.service
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CategoriesComponent } from './categories/categories.component';
 
+//Pipes
+import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { CategoriesComponent } from './categories/categories.component';
     HomeCategoryDetailsComponent,
     BookCategoriesComponent,
     ProductBarComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    IterateObjectsPipe
   ],
   imports: [
     BrowserModule,
