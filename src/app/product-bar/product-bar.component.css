@@ -1,0 +1,65 @@
+.product-bar li{
+  min-height:280px;
+  width:200px;
+  text-align: left;
+  padding: 0;
+  position: relative;
+  margin: 0 10px;
+  display: block;
+  float: left;
+  font-size: 15px;
+  font-weight: 400;
+}
+.product-bar li a.carousel-image-link img {
+  border: 2px solid transparent;
+  bottom: 0;
+  left: 0;
+  max-height: 170px;
+  position: absolute;
+  right: 0;
+  height: auto;
+  max-width: 118px;
+  width: 100%;
+}
+.product-bar li>a.carousel-image-link {
+  margin-bottom: 10px;
+}
+.product-bar li a.carousel-image-link {
+  display: block;
+  height: 170px;
+  position: relative;
+  width: 118px;
+}
+.btn-quick-view{
+  background: #fff;
+  border: 1px solid rgba(149,146,139,.7);
+  bottom: 20px;
+  color: #228d99;
+  left: 0;
+  right: 0;
+  position: absolute;
+  white-space: nowrap;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.product-bar a.btn-quick-view,
+.product-bar a.btn-quick-view:hover {
+  height: 40px;
+  padding: 20px;
+  width: 100%;
+  max-width: 126px;
+  margin: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.product-bar li:hover a.btn-quick-view {
+  opacity: 1;
+}
+.product-bar li p.record-spotlight-title {
+  margin: 0 0 3px;
+}

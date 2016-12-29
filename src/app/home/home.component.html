@@ -53,15 +53,11 @@
     </div>
   </div>
 </article>
-<section *ngFor="let mainCategory of mainCategories">
-  <category-details [mainCategory]="mainCategory"></category-details>
-</section>
-<!--<section id="jewellery-categories">-->
-  <!--<category-details [mainCategory]="mainCategories[1]" [leftPosition]="false"></category-details>-->
-<!--</section>-->
-<!--<section id="clothing-categories">-->
-  <!--<category-details [mainCategory]="mainCategories[2]" [leftPosition]="true"></category-details>-->
-<!--</section>-->
+<article id="subCategories">
+  <section *ngFor="let mainCategory of mainCategories">
+    <category-details [mainCategory]="mainCategory"></category-details>
+  </section>
+</article>
 <br><br><br>
 <app-product-bar></app-product-bar>
 

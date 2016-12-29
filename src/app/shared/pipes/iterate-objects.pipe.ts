@@ -11,7 +11,6 @@ export class IterateObjectsPipe {
         a.push({key: key, val: dict[key]});
       }
     }
-    console.log("a: ", a);
     return a;
   }
 }
