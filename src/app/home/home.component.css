@@ -38,8 +38,7 @@
 .full-width-box{
   width:100vw;
   background:#228d99;
-  padding:45px;
-  height:400px;
+  padding:50px;
 }
 .full-width-box hr{
   background:#fff;
@@ -70,6 +69,10 @@ h1 {
   color: #fff;
   margin-top: 40px;
   font-family: 'Tangerine', cursive;
+}
+#subCategories,
+#subCategories section{
+  margin-top: 100px;
 }
 
 @media only screen and (max-device-width : 1024px) {

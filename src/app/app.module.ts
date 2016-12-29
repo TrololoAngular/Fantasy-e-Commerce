@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { HomeCategoryDetailsComponent } from './home/home.category-details.component';
 import { BookCategoriesComponent } from './book-categories/book-categories.component';
 import { StarComponent } from './shared/star.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
@@ -39,7 +41,8 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     ProductBarComponent,
     CategoriesComponent,
     IterateObjectsPipe,
-    StarComponent
+    StarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
