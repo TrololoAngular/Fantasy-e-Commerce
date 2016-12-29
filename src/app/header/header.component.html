@@ -1,20 +1,26 @@
 <header class="clearfix">
   <div class="brand">
-      <a routerLink="/">Book Forest</a>
-      <!--<div class="btn-group" dropdown [(isOpen)]="status.isOpen">-->
-          <!--<button id="single-button" type="button" class="btn btn-primary" dropdownToggle [disabled]="disabled">-->
-            <!--Button dropdown <span class="caret"></span>-->
-          <!--</button>-->
-          <!--<ul dropdownMenu role="menu" aria-labelledby="single-button">-->
-            <!--<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>-->
-            <!--<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>-->
-            <!--<li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>-->
-            <!--<li class="divider dropdown-divider"></li>-->
-            <!--<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>-->
-          <!--</ul>-->
-      <!--</div>-->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a routerLink="/">Book Forest</a>
+    <!--<div class="btn-group" dropdown [(isOpen)]="status.isOpen">-->
+        <!--<button id="single-button" type="button" class="btn btn-primary" dropdownToggle [disabled]="disabled">-->
+          <!--Button dropdown <span class="caret"></span>-->
+        <!--</button>-->
+        <!--<ul dropdownMenu role="menu" aria-labelledby="single-button">-->
+          <!--<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>-->
+          <!--<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>-->
+          <!--<li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>-->
+          <!--<li class="divider dropdown-divider"></li>-->
+          <!--<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
   </div>
-  <nav id="mainNav">
+  <nav id="mainNav" class="not-visible-on-mobile">
     <ul>
       <li>
         <button id="books-dropdown" class="menu-dropdown-button dropdown-toggle" (click)="alert()">
@@ -38,7 +44,7 @@
       </li>
     </ul>
   </nav>
-  <nav id="userNav">
+  <nav id="userNav" class="not-visible-on-mobile">
     <ul>
       <li>
         <a href="#">Login</a>

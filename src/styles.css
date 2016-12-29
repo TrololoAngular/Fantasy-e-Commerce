@@ -106,3 +106,17 @@ hr {
   background-color: #228d99;
   border: none;
 }
+
+/*Responsive classes*/
+.visible-on-mobile{
+  display:none;
+}
+
+@media only screen and (max-device-width : 981px) {
+  .not-visible-on-mobile{
+    display:none!important;
+  }
+  .visible-on-mobile{
+    display:initial;
+  }
+}
