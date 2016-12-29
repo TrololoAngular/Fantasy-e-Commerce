@@ -12,7 +12,7 @@ import { ProductBarComponent } from './../product-bar/product-bar.component';
   styleUrls:["./home.component.css"]
 })
 export class HomeComponent {
-  mainCategories: FirebaseListObservable<any[]>;
+  mainCategories: any;
 
   constructor(private booksService: BookCategoriesService){ }
 

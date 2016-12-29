@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'mapToIterable'
 })
 export class IterateObjectsPipe {
-  transform(dict: Object): Array {
+  transform(dict: Object): Array<any> {
     var a = [];
     for (var key in dict) {
       if (dict.hasOwnProperty(key)) {

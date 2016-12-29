@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 export class BookCategoriesService {
   constructor( private af: AngularFire) { }
 
-  getAllBookCategories() {
+  getAllBooks() {
     const result = this.af.database.list('/books');
     return result;
   }
@@ -18,10 +18,10 @@ export class BookCategoriesService {
     return mainCategories;
   }
 
-  getBookSubcategories() {
-    const bookCategories = this.af.database.list('/bookCategories');
-    return bookCategories;
-  }
+  //getBookSubcategories() {
+  //  const bookCategories = this.af.database.list('/bookCategories');
+  //  return bookCategories;
+  //}
 
   getSubcategoryByType(type: string): Observable<any> {
     const subCategory = this.af.database.object(`/${type}`);
