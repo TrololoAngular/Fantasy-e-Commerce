@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './book-categories.component.html',
   styleUrls: ['./book-categories.component.css']
 })
-export class BookCategoriesComponent implements OnInit{
+export class BookCategoriesComponent{
   categoryName: string;
   category: any;
 
@@ -27,7 +27,7 @@ export class BookCategoriesComponent implements OnInit{
     this.route.params
     .subscribe((parameters) => this.categoryName = parameters['categoryName']);
 
-    const category$ = this.categoryService.getBookCategoryByName(this.categoryName);
+    const category$ = this.categoryService.getSubcategoryByType(this.categoryName);
     category$.subscribe(result => {
       this.category = result;
     });

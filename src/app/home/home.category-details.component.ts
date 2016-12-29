@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
-import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
+import { IterateObjectsPipe } from '../shared/pipes/iterate-objects.pipe';
 import { BookCategoriesService } from '../book-categories/book-categories.service';
 
 @Component ({

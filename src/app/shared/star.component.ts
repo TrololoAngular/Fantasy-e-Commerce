@@ -4,98 +4,12 @@ import {CommonModule} from "@angular/common";
 
 @Component({
   selector: "ai-star",
-  template: `
-<span (mouseleave)="resetHovered()"
-      class="rating"
-      [class.disabled]="disabled"
-      [class.readonly]="readonly"
-      tabindex="0"
-      role="slider"
-      aria-valuemin="0"
-      [attr.aria-valuemax]="ratingRange.length"
-      [attr.aria-valuenow]="model">
-    <span *ngFor="let item of ratingRange; let index = index">
-        <i (mouseenter)="setHovered(item)"
-           (mousemove)="changeHovered($event)"
-           (click)="rate(item)"
-           [attr.data-icon]="fullIcon"
-           class="{{ iconClass }} half{{ calculateWidth(item) }}"
-           [title]="titles[index] || item">{{ emptyIcon }}</i>
-    </span>
-</span>
-`,
+  templateUrl: "./star.component.html",
   providers: [
     { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => StarComponent), multi: true },
     { provide: NG_VALIDATORS, useExisting: forwardRef(() => StarComponent), multi: true },
   ],
-  styles: [`
-span.rating {
-    cursor: pointer;
-    outline: none;
-}
-span.rating.readonly {
-    cursor: default;
-}
-span.rating.disabled {
-    cursor: not-allowed;
-}
-span.rating i{
-    font-style: normal;
-}
-.star-icon {
-    color: #ddd;
-    font-size: 2em;
-    position: relative;
-}
-.star-icon:before {
-    color: #FDE16D;
-    content: attr(data-icon) " ";
-    position: absolute;
-    left: 0;
-    overflow: hidden;
-    width: 0;
-}
-span.rating.disabled .star-icon:before {
-    color: #ECECEC;
-    text-shadow: none;
-}
-.star-icon.half10:before {
-    width: 10%;
-}
-.star-icon.half20:before {
-    width: 20%;
-}
-.star-icon.half30:before {
-    width: 30%;
-}
-.star-icon.half40:before {
-    width: 40%;
-}
-.star-icon.half50:before {
-    width: 50%;
-}
-.star-icon.half60:before {
-    width: 60%;
-}
-.star-icon.half70:before {
-    width: 70%;
-}
-.star-icon.half80:before {
-    width: 80%;
-}
-.star-icon.half90:before {
-    width: 90%;
-}
-.star-icon.half100:before {
-    width: 100%;
-}
-@-moz-document url-prefix() { /* Firefox Hack */
-  .star-icon {
-    font-size: 50px;
-    line-height: 34px;
-  }
-}
-`]
+  styleUrls: ['./star.component.css']
 })
 export class StarComponent {
 

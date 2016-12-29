@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Observable';
-import { Http } from '@angular2/http';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 import { BookCategoriesService } from '../book-categories/book-categories.service';
 
