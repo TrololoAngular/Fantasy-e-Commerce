@@ -16,7 +16,7 @@ export class BookCategoriesService {
   }
 
   getJewelleryCategory(){
-    const jewellery = this.af.database.object('/jewellery');
+    const jewellery = this.af.database.object('/jewellery/categories');
     console.log("jew: ", jewellery);
     return jewellery;
   }

@@ -11,7 +11,7 @@ import { ProductBarComponent } from './../product-bar/product-bar.component';
 })
 export class HomeComponent {
   bookCategory: FirebaseListObservable<any[]>;
-  jewelleryCategory: FirebaseObjectObservable<any>;
+  jewelleryCategory: FirebaseListObservable<any[]>;
 
   constructor(private booksService: BookCategoriesService){ }
 

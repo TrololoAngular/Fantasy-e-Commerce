@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector:"app-header",
   templateUrl:"./header.component.html",
@@ -11,6 +13,16 @@ export class HeaderComponent{
 
   public expanded(event:any):void {
     console.log();
+  }
+
+  ngOnInit() {
+    var register = $(".register");
+    console.log(register);
+  }
+
+  public alert() {
+    var register = $(".register");
+    console.log("Jquery: ", register);
   }
 }
 
