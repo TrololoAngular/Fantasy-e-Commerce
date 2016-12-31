@@ -1,24 +1,27 @@
-header{
-  display: table;
-  width: 100%;
-  padding:20px;
-  background-color: rgba(0, 0, 0, 0.65);
-  position: fixed;
-  color: white;
-  z-index:9999;
-}
 .brand{
   font-family: 'Tangerine', cursive;
-  font-size: 60px;
-  line-height: 40px;
+  font-size: 45px;
+  line-height: 45px;
 }
-.brand, header nav {
-  display: table-cell;
-  vertical-align: middle;
+header nav {
+  border: none;
+  background: rgba(0, 0, 0, 0.75);
 }
-.brand a, nav a, .menu-dropdown-button,.caret{
+.brand a,
+nav a,
+.menu-dropdown-button,
+.caret,
+.dropdown-menu li a{
   color:white;
   text-decoration: none;
+}
+.dropdown-menu{
+  top: 128%!important;
+  background: rgba(0, 0, 0, 0.75);
+}
+.dropdown-menu li {
+  text-align: center;
+  text-transform: initial;
 }
 .menu-dropdown-button{
   background:none;
@@ -27,30 +30,39 @@ header{
   font-weight:500;
 }
 header li.open .menu-dropdown-button,
-.menu-dropdown-button:hover
+.menu-dropdown-button:hover,
+.dropdown-menu li:hover a
 {
   color: #b0c9d4;
+  cursor:pointer;
+}
+.dropdown-menu li:hover a
+{
+  background: #228d99;
+  color:#fff;
+}
+.navbar #mainNav.navbar-nav {
+  display: inline-block;
+  float: none;
+  margin-right:-120px;
 }
 
-#mainNav{
+.navbar .navbar-collapse {
   text-align: center;
 }
-.brand, #userNav {
-  width: 20%;
+.dropdown-menu li {
+  text-align: left;
 }
-#userNav{
-  text-align:right;
-}
-nav ul {
-  margin-bottom: 0px;
-}
-header li {
-  list-style: none;
-  display: initial;
-  margin-right: 10px;
-}
+
 @media only screen and (max-device-width : 981px) {
-  .brand{
-    width:40%
+  .navbar #mainNav.navbar-nav {
+    margin-right:-20px;
   }
+  .dropdown-menu{
+    position: initial;
+  }
+  .dropdown-menu li {
+    text-align: center;
+  }
+
 }

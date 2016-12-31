@@ -1,56 +1,112 @@
-<header class="clearfix">
-  <div class="brand">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a routerLink="/">Book Forest</a>
-    <!--<div class="btn-group" dropdown [(isOpen)]="status.isOpen">-->
-        <!--<button id="single-button" type="button" class="btn btn-primary" dropdownToggle [disabled]="disabled">-->
-          <!--Button dropdown <span class="caret"></span>-->
-        <!--</button>-->
-        <!--<ul dropdownMenu role="menu" aria-labelledby="single-button">-->
-          <!--<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>-->
-          <!--<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>-->
-          <!--<li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>-->
-          <!--<li class="divider dropdown-divider"></li>-->
-          <!--<li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
-  </div>
-  <nav id="mainNav" class="not-visible-on-mobile">
-    <ul>
-      <li>
-        <button id="books-dropdown" class="menu-dropdown-button dropdown-toggle" (click)="alert()">
-          Books <span class="caret"></span>
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header brand">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"
+                (click)="isMenuCollapsed = !isMenuCollapsed;
+                  isBooksCollapsed = true;
+                  isJewelleryCollapsed = true;
+                  isClothingCollapsed = true">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-      </li>
-      <li>
-        <button id="jewellery-dropdown" class="menu-dropdown-button dropdown-toggle">
-          Jewellery <span class="caret"></span>
-        </button>
-      </li>
-      <li>
-        <button id="clothing-dropdown" class="menu-dropdown-button dropdown-toggle">
-          Clothing <span class="caret"></span>
-        </button>
-      </li>
-      <li>
-        <button id="fiction-dropdown" class="menu-dropdown-button dropdown-toggle">
-          Fan Fiction <span class="caret"></span>
-        </button>
-      </li>
-    </ul>
-  </nav>
-  <nav id="userNav" class="not-visible-on-mobile">
-    <ul>
-      <li>
-        <a href="#">Login</a>
-        <span> / </span>
-        <a href="#" class="register" >Register</a>
-      </li>
-    </ul>
+        <a router-link="/">Book Forest</a>
+      </div>
+      <div class="collapse navbar-collapse"
+           (collapsed)="collapsed($event)"
+           (expanded)="expanded($event)"
+           [collapse]="isMenuCollapsed">
+        <ul class="nav navbar-nav" id="mainNav">
+          <li routerLinkActive="active" class="active menu-dropdown-button">
+            <a id="booksDropdown" class="pointer" role="button"  data-toggle="dropdown" data-target="#"
+               (click)="isBooksCollapsed = !isBooksCollapsed;
+                   isJewelleryCollapsed = true;
+                   isClothingCollapsed = true;">
+              Books &nbsp;<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu booksDropdown" role="menu" aria-labelledby="booksDropdown"
+                (collapsed)="collapsed($event)"
+                (expanded)="expanded($event)"
+                [collapse]="isBooksCollapsed">
+              <li><a router-link="/">Epic Fantasy</a></li>
+              <li><a router-link="/">Dark Fantasy</a></li>
+              <li><a router-link="/">Vampire Fantasy</a></li>
+              <li><a router-link="/">Sci-fi Fantasy</a></li>
+              <li><a router-link="/">Romantic Fantasy</a></li>
+              <li><a router-link="/">Young Adult Fantasy</a></li>
+            </ul>
+          </li>
+          <li routerLinkActive="active" class="active menu-dropdown-button">
+            <a id="jewelleryDropdown" class="pointer" role="button" data-toggle="dropdown" data-target="#"
+               (click)="isJewelleryCollapsed = !isJewelleryCollapsed;
+                 isBooksCollapsed = true;
+                 isClothingCollapsed = true;"
+               >Jewellery &nbsp;
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu jewelleryDropdown" role="menu" aria-labelledby="jewelleryDropdown"
+                (collapsed)="collapsed($event)"
+                (expanded)="expanded($event)"
+                [collapse]="isJewelleryCollapsed">
+              <li><a router-link="/">Fantasy Earrings</a></li>
+              <li><a router-link="/">Fantasy Bracelets</a></li>
+              <li><a router-link="/">Fantasy Necklaces</a></li>
+              <li><a router-link="/">Fantasy Rings</a></li>
+              <li><a router-link="/">Fantasy Tiaras</a></li>
+              <li><a router-link="/">Fantasy Brooches</a></li>
+            </ul>
+          </li>
+          <li routerLinkActive="active" class="active menu-dropdown-button">
+            <a id="clothingDropdown" class="pointer" role="button" data-toggle="dropdown" data-target="#"
+               (click)="isClothingCollapsed = !isClothingCollapsed;
+                 isJewelleryCollapsed = true;
+                 isBooksCollapsed = true;"
+              >Clothing &nbsp;
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu clothingDropdown" role="menu" aria-labelledby="clothingDropdown"
+                (collapsed)="collapsed($event)"
+                (expanded)="expanded($event)"
+                [collapse]="isClothingCollapsed">
+              <li><a router-link="/">Elvish Clothing</a></li>
+              <li><a router-link="/">Ninja Clothing</a></li>
+              <li><a router-link="/">Gothic Clothing</a></li>
+              <li><a router-link="/">Assassin Clothing</a></li>
+              <li><a router-link="/">Warrior Clothing</a></li>
+              <li><a router-link="/">Rogue Clothing</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li routerLink="/profile" routerLinkActive="active" (click)="isMenuCollapsed = true">
+            <a class="pointer">
+              <span class="glyphicon glyphicon-user"></span>
+              Profile
+            </a>
+          </li>
+          <li>
+            <a class="pointer" (click)="logout()">
+              <span class="glyphicon glyphicon-log-out"></span>
+              Logout
+            </a>
+          </li>
+          <li>
+            <a id="dLabel" role="button"
+               (click)="isNotificationCollapsed = !isNotificationCollapsed; isMenuCollapsed = true"
+               data-toggle="dropdown" data-target="#">
+              <i class="glyphicon glyphicon-cart"></i>
+              Cart
+            </a>
+            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel"
+                (collapsed)="collapsed($event)"
+                (expanded)="expanded($event)"
+                [collapse]="isNotificationCollapsed">
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>

@@ -8,20 +8,23 @@ declare var $: any;
   styleUrls:["./header.component.css"]
 })
 export class HeaderComponent{
-  public disabled:boolean = false;
-  public status:{isCollapsed:boolean} = {isCollapsed: false};
+  public isMenuCollapsed: boolean = true;
+  public isNotificationCollapsed: boolean = true;
+  public isBooksCollapsed: boolean = true;
+  public isJewelleryCollapsed: boolean = true;
+  public isClothingCollapsed: boolean = true;
+  public isOpen: boolean = false;
 
-  public expanded(event:any):void {
-    console.log();
-  }
+  constructor(){}
 
   ngOnInit() {
-    var register = $(".register");
-    console.log(register);
   }
 
-  public alert() {
-    var register = $(".register");
+  public collapsed(event: any): void {
   }
+
+  public expanded(event: any): void {
+  }
+
 }
 
