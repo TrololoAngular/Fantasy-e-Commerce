@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AngularFire, AuthProviders } from 'angularfire2';
 
 declare var $: any;
 
@@ -8,17 +9,42 @@ declare var $: any;
   styleUrls:["./header.component.css"]
 })
 export class HeaderComponent{
+  loggedIn: Boolean = false;
+  user = {};
+
   public isMenuCollapsed: boolean = true;
   public isNotificationCollapsed: boolean = true;
   public isBooksCollapsed: boolean = true;
   public isJewelleryCollapsed: boolean = true;
   public isClothingCollapsed: boolean = true;
-  public isOpen: boolean = false;
+  public isUserCollapsed: boolean = true;
+  //public isOpen: boolean = false;
 
-  constructor(){}
-
-  ngOnInit() {
+  constructor(private af: AngularFire){
+    this.af.auth.subscribe(user => {
+      if(user) {
+        this.loggedIn = true;
+        this.user = user.google;
+        console.log(this.user);
+      }
+      else {
+        this.loggedIn = false;
+        this.user = {};
+      }
+    });
   }
+
+  login() {
+    this.af.auth.login({
+      provider: AuthProviders.Google
+    });
+  }
+
+  logout() {
+    this.af.auth.logout();
+  }
+
+
 
   public collapsed(event: any): void {
   }

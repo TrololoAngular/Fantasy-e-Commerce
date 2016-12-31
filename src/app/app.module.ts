@@ -21,12 +21,12 @@ import { HomeCategoryDetailsComponent } from './home/home.category-details.compo
 import { BookCategoriesComponent } from './book-categories/book-categories.component';
 import { StarComponent } from './shared/star.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { ProductBarComponent } from './product-bar/product-bar.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
-import { ProductBarComponent } from './product-bar/product-bar.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { AuthenticationService } from './shared/services/authentication.service';
 
 //Pipes
 import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
@@ -77,7 +77,10 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     }
 ])
   ],
-  providers: [BookCategoriesService],
+  providers: [
+    BookCategoriesService,
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -20,7 +20,7 @@
            [collapse]="isMenuCollapsed">
         <ul class="nav navbar-nav" id="mainNav">
           <li routerLinkActive="active" class="active menu-dropdown-button">
-            <a id="booksDropdown" class="pointer" role="button"  data-toggle="dropdown" data-target="#"
+            <a id="booksDropdown" class="pointer" role="button"  data-toggle="dropdown"
                (click)="isBooksCollapsed = !isBooksCollapsed;
                    isJewelleryCollapsed = true;
                    isClothingCollapsed = true;">
@@ -39,7 +39,7 @@
             </ul>
           </li>
           <li routerLinkActive="active" class="active menu-dropdown-button">
-            <a id="jewelleryDropdown" class="pointer" role="button" data-toggle="dropdown" data-target="#"
+            <a id="jewelleryDropdown" class="pointer" role="button" data-toggle="dropdown"
                (click)="isJewelleryCollapsed = !isJewelleryCollapsed;
                  isBooksCollapsed = true;
                  isClothingCollapsed = true;"
@@ -59,7 +59,7 @@
             </ul>
           </li>
           <li routerLinkActive="active" class="active menu-dropdown-button">
-            <a id="clothingDropdown" class="pointer" role="button" data-toggle="dropdown" data-target="#"
+            <a id="clothingDropdown" class="pointer" role="button" data-toggle="dropdown"
                (click)="isClothingCollapsed = !isClothingCollapsed;
                  isJewelleryCollapsed = true;
                  isBooksCollapsed = true;"
@@ -80,24 +80,62 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li routerLink="/profile" routerLinkActive="active" (click)="isMenuCollapsed = true">
-            <a class="pointer">
-              <span class="glyphicon glyphicon-user"></span>
-              Profile
-            </a>
-          </li>
           <li>
-            <a class="pointer" (click)="logout()">
-              <span class="glyphicon glyphicon-log-out"></span>
-              Logout
+            <button class="pointer">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </li>
+          <li  *ngIf!="loggedIn">
+            <button class="pointer" md-raised-button (click)="login()">
+              <span class="glyphicon glyphicon-user"></span>
+              Login
+            </button>
+          </li>
+          <li *ngIf="loggedIn">
+            <a id="userDropdown" role="button" data-toggle="dropdown"
+               (click)="isUserCollapsed = !isUserCollapsed;
+                  isBooksCollapsed = true;
+                  isJewelleryCollapsed = true;
+                  isClothingCollapsed = true;">
+              <img src="{{user.photoURL}}" class="profileImg"/>
+              {{user.displayName}}&nbsp;
+              <span class="caret"></span>
             </a>
+            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel"
+                (collapsed)="collapsed($event)"
+                (expanded)="expanded($event)"
+                [collapse]="isUserCollapsed">
+              <li class="signedAs">
+                Signed in as: <strong>{{user.displayName}}</strong>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="#">Your Profile</a>
+              </li>
+              <li>
+                <a href="#">Your Stories</a>
+              </li>
+              <li>
+                <a href="#">Your Stories</a>
+              </li>
+              <li>
+                <a href="#">Your Stories</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="text-lg-right blue-on-hover">
+                <button md-raised-button class="pointer " (click)="logout()">
+                  <span class="glyphicon glyphicon-log-out"></span>
+                  Logout
+                </button>
+              </li>
+            </ul>
           </li>
           <li>
             <a id="dLabel" role="button"
-               (click)="isNotificationCollapsed = !isNotificationCollapsed; isMenuCollapsed = true"
-               data-toggle="dropdown" data-target="#">
-              <i class="glyphicon glyphicon-cart"></i>
-              Cart
+               (click)="isNotificationCollapsed = !isNotificationCollapsed; isMenuCollapsed = true;"
+               data-toggle="dropdown">
+              <i class="glyphicon glyphicon-shopping-cart"></i>
+              Cart: 0 items
             </a>
             <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel"
                 (collapsed)="collapsed($event)"

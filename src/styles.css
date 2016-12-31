@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/*resets*/
+a:focus,
+a:hover{
+  outline: none;
+}
 /*box classes*/
 .Aligner {
   display: flex;
@@ -50,6 +55,9 @@ h2, h3, h4, h5, h6 {
 }
 .subtitle {
   font-size: 25px;
+}
+.blue-on-hover:hover{
+  color:#228d99;
 }
 
 /*menu classes*/
@@ -112,6 +120,9 @@ hr {
   display:none;
 }
 
+a{
+  cursor:pointer;
+}
 @media only screen and (max-device-width : 981px) {
   .not-visible-on-mobile{
     display:none!important;
