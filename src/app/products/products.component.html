@@ -1,9 +1,91 @@
-<p>
+<p class="mahni-me">
   products works!
 </p>
-<ul class="nav"> 
-  <li *ngFor="let item of items | async">
-    {{item.$value}}
-  </li>
-</ul>
-<div> Trolo</div>
+<br>   
+<br>
+<div class="container">
+   <div class="row">
+    <div class="col-md-6">
+      <img
+        src="https://boofsbooks.files.wordpress.com/2010/10/dracula-cover.jpg"
+        alt="Dracula"
+        class="image-responsive"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Dracula</h1>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="author">Bram Stoker</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h6 class="product-price">$129.00</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 in-stock">
+        <span>In Stock</span>
+      </div>
+    </div>
+    <div class="row add-to-cart">
+      <div class="col-md-12 bottom-rule">
+        <input type="number" value="1" pattern="[0-9]*" class="quantity-input" />
+      <button class="add-to-cart-button">
+        Add to Cart
+      </button>
+      </div>
+    </div>
+    <div class="row social">
+      <div class="col-md-12">
+      <a href="https://www.facebook.com/" target="_blank">
+        <div class="social-icons-circle">
+          <i class="fa fa-facebook"></i>
+        </div>
+      </a>
+      <a href="https://twitter.com/" target="_blank">
+        <div class="social-icons-circle">
+          <i class="fa fa-twitter"></i>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/"target="_blank">
+        <div class="social-icons-circle">
+          <i class="fa fa-instagram"></i>
+        </div>
+      </a>
+      <a href="https://www.snapchat.com/"target="_blank">
+        <div class="social-icons-circle">
+          <i class="fa fa-snapchat-ghost"></i>
+        </div>
+      </a>
+      <a href="https://plus.google.com/"target="_blank">
+        <div class="social-icons-circle">
+          <i class="fa fa-google-plus"></i> 
+        </div>
+      </a>
+     </div>
+     </div>       
+  </div>
+ </div>
+</div>
+<div class="row">
+    <div class="col-md-8 tabs">
+      <tabset [justified]="true">
+        <tab heading="Justified" class="tabs-content">Justified content</tab>
+        <tab heading="SJ" class="tabs-content">Short Labeled Justified content</tab>
+        <tab heading="Long Justified" class="tabs-content">Long Labeled Justified content</tab>
+      </tabset>
+    </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <h5 class="text-center">Most Popular Products</h5>
+    <hr>
+    <app-product-bar></app-product-bar>
+  </div>
+</div>

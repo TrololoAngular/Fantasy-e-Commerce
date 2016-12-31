@@ -4,7 +4,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { CarouselModule } from 'ng2-bootstrap';
+import { TabsModule } from 'ng2-bootstrap/tabs';
 import {Ng2BootstrapModule} from 'ng2-bootstrap';
+import { CollapseModule   } from 'ng2-bootstrap';
 
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { firebaseConfig } from './../environments/firebase.config';
@@ -47,6 +50,9 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     FormsModule,
     HttpModule,
     Ng2BootstrapModule,
+    CollapseModule.forRoot(),
+    CarouselModule.forRoot(),
+    TabsModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig,
     {
       provider: AuthProviders.Google,
