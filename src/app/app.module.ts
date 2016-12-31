@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselModule } from 'ng2-bootstrap';
+import { TabsModule } from 'ng2-bootstrap/tabs';
 
 import { CollapseModule   } from 'ng2-bootstrap';
 
@@ -50,6 +51,7 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     HttpModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
+    TabsModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig,
     {
       provider: AuthProviders.Google,
