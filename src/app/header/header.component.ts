@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AngularFire, AuthProviders } from 'angularfire2';
+import { ProductsService } from '../shared/services/products.service';
 
 declare var $: any;
 
@@ -18,8 +19,11 @@ export class HeaderComponent{
   public isJewelleryCollapsed: boolean = true;
   public isClothingCollapsed: boolean = true;
   public isUserCollapsed: boolean = true;
+  public cartQuantity: number = 0;
+  public cartProductsInfo: any[];
 
-  constructor(private af: AngularFire){
+
+  constructor(private af: AngularFire, private productsService: ProductsService){
     this.af.auth.subscribe(user => {
       if(user) {
         this.loggedIn = true;
@@ -31,6 +35,15 @@ export class HeaderComponent{
         this.user = {};
       }
     });
+  }
+
+  ngOnInit() {
+    this.productsService.getUserCartProductsIds()
+      .subscribe(productsInfo => {
+        this.cartQuantity = 0;
+        productsInfo.forEach(product => this.cartQuantity += +product.quantity);
+        console.log("Quantity: ", this.cartQuantity);
+      })
   }
 
   login() {

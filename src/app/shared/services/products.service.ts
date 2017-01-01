@@ -8,8 +8,8 @@ import 'rxjs/add/operator/map';
 export class ProductsService {
   constructor( private af: AngularFire) { }
 
-  getUserCartProductsIds(userKey: string){
-    return this.af.database.list(`userCartItems/${userKey}`);
+  getUserCartProductsIds(){
+    return this.af.database.list(`userCartItems/${localStorage.getItem('userKey')}`);
   }
 
   getProductByKey(productKey: string) {

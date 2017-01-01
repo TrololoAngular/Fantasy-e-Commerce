@@ -10,7 +10,6 @@ import { RatingModule } from "../shared/star.component";
 })
 export class ProductComponent implements OnInit {
   pageTitle: string = "";
-
   product: any;
   productRating:number;
   productQuantity: number = 1;
