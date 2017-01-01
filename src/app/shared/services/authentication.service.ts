@@ -20,11 +20,9 @@ export class AuthenticationService {
     this.af.auth.login({
       provider: AuthProviders.Google
     });
-    console.log("Logged in");
   }
 
   logout() {
     this.af.auth.logout();
-    console.log("Logged out");
   }
 }

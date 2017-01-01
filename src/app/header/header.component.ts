@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AngularFire, AuthProviders } from 'angularfire2';
 import { ProductsService } from '../shared/services/products.service';
+import { AuthenticationService } from '../shared/services/authentication.service';
 
 declare var $: any;
 
@@ -23,16 +24,19 @@ export class HeaderComponent{
   public cartProductsInfo: any[];
 
 
-  constructor(private af: AngularFire, private productsService: ProductsService){
-    this.af.auth.subscribe(user => {
+  constructor(private auth: AuthenticationService, private productsService: ProductsService){
+    this.auth.authenticate().subscribe(user => {
       if(user) {
         this.loggedIn = true;
         this.user = user.google;
         localStorage.setItem('user', JSON.stringify(this.user));
+        localStorage.setItem('isLoggedIn', 'true');
       }
       else {
         this.loggedIn = false;
         this.user = {};
+        localStorage.removeItem('user');
+        localStorage.setItem('isLoggedIn', 'false');
       }
     });
   }
@@ -42,20 +46,16 @@ export class HeaderComponent{
       .subscribe(productsInfo => {
         this.cartQuantity = 0;
         productsInfo.forEach(product => this.cartQuantity += +product.quantity);
-        console.log("Quantity: ", this.cartQuantity);
       })
   }
 
   login() {
-    this.af.auth.login({
-      provider: AuthProviders.Google
-    });
+    this.auth.login();
   }
 
   logout() {
-    this.af.auth.logout();
+    this.auth.logout();
   }
-
 
 
   public collapsed(event: any): void {

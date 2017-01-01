@@ -8,6 +8,10 @@ import 'rxjs/add/operator/map';
 export class ProductsService {
   constructor( private af: AngularFire) { }
 
+  getAllProducts() {
+    return this.af.database.list('/books');
+  }
+
   getUserCartProductsIds(){
     return this.af.database.list(`userCartItems/${localStorage.getItem('userKey')}`);
   }
@@ -15,6 +19,12 @@ export class ProductsService {
   getProductByKey(productKey: string) {
     return this.af.database.object(`books/${productKey}`);
   }
+
+  getSubcategoryByType(type: string): Observable<any> {
+    const subCategory = this.af.database.object(`/${type}`);
+    return subCategory;
+  }
+
 
   //updateProductQuantityInCart(userKey: string, productKey: string, newProductQuantity: string){
   //    this.af.database.object(`books/${userKey}/`)
@@ -27,17 +37,5 @@ export class ProductsService {
     };
     this.af.database.list(`userCartItems/${userKey}`).push(productInfo);
   }
-  //
-  //updateLocalStorageCartItem(productKey: string, newProductQuantity: string) {
-  //  var existingCartItems = JSON.parse(localStorage.getItem('cartItems')),
-  //  //    productCurrentState = existingCartItems.filter( currentProduct => {
-  //  //  return currentProduct.$key == productKey;
-  //  //});
-  //
-  //  var currentProductIndex = existingCartItems.findIndex(x => x.$key == productKey);
-  //  existingCartItems[currentProductIndex].quantity = newProductQuantity;
-  //
-  //  localStorage.setItem('cartItems') = JSON.stringify(existingCartItems);
-  //
-  //}
+
 }
