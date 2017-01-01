@@ -23,6 +23,10 @@ import { StarComponent } from './shared/star.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
+import { PageTitleComponent } from './shared/components/page-title.component';
+import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
+
 
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
@@ -43,7 +47,10 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     CategoriesComponent,
     IterateObjectsPipe,
     StarComponent,
-    FooterComponent
+    FooterComponent,
+    ShoppingCartComponent,
+    PageTitleComponent,
+    NotLoggedInComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +81,10 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     {
       path:"",
       component: HomeComponent
+    },
+    {
+      path:"user/shopping-cart",
+      component: ShoppingCartComponent
     }
 ])
   ],

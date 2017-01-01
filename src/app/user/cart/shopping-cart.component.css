@@ -1,0 +1,10 @@
+.empty-cart-p{
+  width:50%;
+}
+.empty-cart-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 35px;
+  background-image: url(../../../assets/images/empty-cart.png);
+  background-size: contain;
+}

@@ -9,14 +9,7 @@ export class AuthenticationService {
   constructor( private af: AngularFire) { }
 
   isLoggedIn() {
-    this.af.auth.subscribe(user => {
-      if (user) {
-        return true;
-      }
-      else {
-        return false;
-      }
-    });
+    return this.af.auth;
   }
 
   getUserInfo() {

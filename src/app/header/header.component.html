@@ -115,10 +115,10 @@
                 <a href="#">Your Stories</a>
               </li>
               <li>
-                <a href="#">Your Stories</a>
+                <a href="#">Your Shopping Cart</a>
               </li>
               <li>
-                <a href="#">Your Stories</a>
+                <a href="#">Your Purchase History</a>
               </li>
               <li role="separator" class="divider"></li>
               <li class="text-lg-right blue-on-hover">
@@ -130,17 +130,10 @@
             </ul>
           </li>
           <li>
-            <a id="dLabel" role="button"
-               (click)="isNotificationCollapsed = !isNotificationCollapsed; isMenuCollapsed = true;"
-               data-toggle="dropdown">
+            <a routerLink="user/shopping-cart">
               <i class="glyphicon glyphicon-shopping-cart"></i>
               Cart: 0 items
             </a>
-            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel"
-                (collapsed)="collapsed($event)"
-                (expanded)="expanded($event)"
-                [collapse]="isNotificationCollapsed">
-            </ul>
           </li>
         </ul>
       </div>

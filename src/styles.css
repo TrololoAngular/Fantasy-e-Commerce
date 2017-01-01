@@ -106,6 +106,7 @@ header li.open .dropdown-toggle::after {
   color: #228d99;
   border-color: #228d99;
   margin: 0;
+  width:auto;
 }
 hr {
   height: 3px;

@@ -18,7 +18,6 @@ export class HeaderComponent{
   public isJewelleryCollapsed: boolean = true;
   public isClothingCollapsed: boolean = true;
   public isUserCollapsed: boolean = true;
-  //public isOpen: boolean = false;
 
   constructor(private af: AngularFire){
     this.af.auth.subscribe(user => {

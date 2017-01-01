@@ -1,0 +1,30 @@
+<article>
+  <page-title [pageTitle]="pageTitle"></page-title>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <section *ngIf="isCartEmpty">
+          <div class="Aligner">
+            <div class="empty-cart-icon"></div>
+          </div>
+          <div class="Aligner wrap-content">
+            <h2>YOUR CART IS CURRENTLY EMPTY.</h2>
+            <p class="text-center empty-cart-p">
+              Before proceed to checkout you must add some products to your shopping cart.
+              You will find a lot of interesting products on our "Shop" page.
+            </p>
+            <a routerLink="/" class="cta cta-default">
+              Return to Shop
+            </a>
+          </div>
+        </section>
+        <section *ngIf="!isCartEmpty">
+
+        </section>
+      </div>
+    </div>
+  </div>
+</article>
+<!--<article *ngIf="!loggedIn">-->
+  <!--<not-logged-in></not-logged-in>-->
+<!--</article>-->
