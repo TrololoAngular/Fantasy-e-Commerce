@@ -1,5 +1,5 @@
 img {
-  height: 300px;
+  height: 322px;
   width: 300px;
   object-fit: contain;
   margin-left: 80px;
@@ -18,11 +18,13 @@ h1{
 }
 
 .product-price{
-    font-size: 24px;
+  font-size: 35px;
+  color: #228d99;
+  font-weight: 500;
 }
 
 .in-stock{
-    margin-top: 5x;
+    margin-top: 5px;
     margin-bottom: 8px;
 }
 .quantity-input{

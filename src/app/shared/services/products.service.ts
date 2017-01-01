@@ -23,8 +23,8 @@ export class ProductsService {
   addProductToCart(userKey: string, productKey: string, productQuantity: number) {
     var productInfo = {
       id: productKey,
-      quantity: productQuantity.toString()
-    }
+      quantity: productQuantity
+    };
     this.af.database.list(`userCartItems/${userKey}`).push(productInfo);
   }
   //

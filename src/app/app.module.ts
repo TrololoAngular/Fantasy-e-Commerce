@@ -19,7 +19,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { HomeCategoryDetailsComponent } from './home/home.category-details.component';
 import { BookCategoriesComponent } from './book-categories/book-categories.component';
-import { StarComponent } from './shared/star.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -28,6 +27,8 @@ import { CartProductPreviewComponent } from './user/cart/cart-product-preview.co
 import { PageTitleComponent } from './shared/components/page-title.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
 
+//Modules
+import { RatingModule } from './shared/star.component';
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
 import { AuthenticationService } from './shared/services/authentication.service';
@@ -47,7 +48,6 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     ProductBarComponent,
     CategoriesComponent,
     IterateObjectsPipe,
-    StarComponent,
     FooterComponent,
     ShoppingCartComponent,
     CartProductPreviewComponent,
@@ -59,6 +59,7 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     FormsModule,
     HttpModule,
     Ng2BootstrapModule,
+    RatingModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     TabsModule.forRoot(),

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StarComponent } from '../shared/star.component';
-import {RatingModule} from "../shared/star.component";
+import { RatingModule } from "../shared/star.component";
 
 @Component({
   selector: 'app-product-bar',
@@ -8,5 +8,6 @@ import {RatingModule} from "../shared/star.component";
   styleUrls: ['./product-bar.component.css']
 })
 export class ProductBarComponent {
+  @Input("starsCount") starsCount: number;
 
 }

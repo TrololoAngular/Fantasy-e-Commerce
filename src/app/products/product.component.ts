@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../shared/services/products.service'
+import { ProductsService } from '../shared/services/products.service';
+import { StarComponent } from '../shared/star.component';
+import { RatingModule } from "../shared/star.component";
 
 @Component({
   selector: 'app-products',
@@ -8,7 +10,9 @@ import { ProductsService } from '../shared/services/products.service'
 })
 export class ProductComponent implements OnInit {
   pageTitle: string = "";
+
   product: any;
+  productRating:number;
   productQuantity: number = 1;
 
   constructor(private productService: ProductsService){
@@ -18,13 +22,13 @@ export class ProductComponent implements OnInit {
     this.productService.getProductByKey("1")
     .subscribe(product => {
         this.product = product;
+        this.productRating = product.rating;
         console.log("Product: ", this.product);
       })
   }
 
-
   addProductToCart(){
-      this.productService.addProductToCart(localStorage.getItem('userKey'), "3" , this.productQuantity );
+      this.productService.addProductToCart(localStorage.getItem('userKey'), this.product.$key , this.productQuantity);
   }
 
 
