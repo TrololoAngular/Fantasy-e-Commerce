@@ -1,4 +1,4 @@
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservabe} from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';

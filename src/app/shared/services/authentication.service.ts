@@ -1,5 +1,4 @@
 import { AngularFire, FirebaseListObservable, AuthProviders } from 'angularfire2';
-import { AuthenticationService } from '../../shared/services/authentication.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';

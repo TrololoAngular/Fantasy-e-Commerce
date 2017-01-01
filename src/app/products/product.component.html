@@ -1,31 +1,27 @@
-<p class="mahni-me">
-  products works!
-</p>
-<br>
-<br>
+<page-title [pageTitle]="pageTitle"></page-title>
 <div class="container">
    <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <img
-        src="https://boofsbooks.files.wordpress.com/2010/10/dracula-cover.jpg"
-        alt="Dracula"
+        src="{{product?.imageUrl}}"
+        alt="{{product?.title}}"
         class="image-responsive"
       />
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
-          <h1>Dracula</h1>
+          <h1>{{product?.title}}</h1>
         </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <p class="author">Bram Stoker</p>
+        <p class="author">{{product?.author}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <h6 class="product-price">$129.00</h6>
+        <h6 class="product-price">{{product?.price | currency: 'USD' }}</h6>
       </div>
     </div>
     <div class="row">
@@ -73,19 +69,26 @@
   </div>
  </div>
 </div>
-<div class="row">
-    <div class="col-md-8 tabs">
-      <tabset [justified]="true">
-        <tab heading="Justified" class="tabs-content">Justified content</tab>
-        <tab heading="SJ" class="tabs-content">Short Labeled Justified content</tab>
-        <tab heading="Long Justified" class="tabs-content">Long Labeled Justified content</tab>
-      </tabset>
+<div class="tabs-holder">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="tabs">
+          <tabset [justified]="true">
+            <tab heading="Description" class="tabs-content">{{product?.description}}</tab>
+            <tab heading="Reviews" class="tabs-content">"Some review"</tab>
+          </tabset>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-<div class="row">
-  <div class="col-sm-12">
-    <h5 class="text-center">Most Popular Products</h5>
-    <hr>
-    <app-product-bar></app-product-bar>
+<div class="container margin-top-50px">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5 class="text-center">Related Products</h5>
+      <hr>
+      <app-product-bar></app-product-bar>
+    </div>
   </div>
 </div>

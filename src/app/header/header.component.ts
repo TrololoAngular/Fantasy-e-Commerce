@@ -25,8 +25,6 @@ export class HeaderComponent{
         this.loggedIn = true;
         this.user = user.google;
         localStorage.setItem('user', JSON.stringify(this.user));
-        localStorage.setItem('userKey', this.user.uid);
-        console.log(this.user);
       }
       else {
         this.loggedIn = false;

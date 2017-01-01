@@ -14,7 +14,7 @@ import { firebaseConfig } from './../environments/firebase.config';
 
 //Components
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { HomeCategoryDetailsComponent } from './home/home.category-details.component';
@@ -39,7 +39,7 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
+    ProductComponent,
     HeaderComponent,
     HomeComponent,
     HomeCategoryDetailsComponent,
@@ -74,7 +74,7 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     },
     {
       path: 'products',
-      component: ProductsComponent
+      component: ProductComponent
     },
     {
       path: 'books/categories/:categoryName',
