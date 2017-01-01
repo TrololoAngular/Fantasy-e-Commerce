@@ -19,6 +19,25 @@
           </div>
         </section>
         <section *ngIf="!isCartEmpty">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr cart-product-preview *ngFor="let productInfo of productsInfo" [productInfo]="productInfo"></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
         </section>
       </div>

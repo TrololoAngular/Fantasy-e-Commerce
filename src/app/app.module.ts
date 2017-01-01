@@ -24,13 +24,14 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
+import { CartProductPreviewComponent } from './user/cart/cart-product-preview.component';
 import { PageTitleComponent } from './shared/components/page-title.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
-
 
 //Services
 import { BookCategoriesService } from './book-categories/book-categories.service';
 import { AuthenticationService } from './shared/services/authentication.service';
+import { ProductsService } from './shared/services/products.service';
 
 //Pipes
 import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
@@ -49,6 +50,7 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     StarComponent,
     FooterComponent,
     ShoppingCartComponent,
+    CartProductPreviewComponent,
     PageTitleComponent,
     NotLoggedInComponent
   ],
@@ -90,7 +92,8 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
   ],
   providers: [
     BookCategoriesService,
-    AuthenticationService
+    AuthenticationService,
+    ProductsService
   ],
   bootstrap: [AppComponent]
 })

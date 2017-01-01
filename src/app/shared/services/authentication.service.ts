@@ -1,4 +1,5 @@
 import { AngularFire, FirebaseListObservable, AuthProviders } from 'angularfire2';
+import { AuthenticationService } from '../../shared/services/authentication.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
@@ -12,26 +13,15 @@ export class AuthenticationService {
     return this.af.auth;
   }
 
-  getUserInfo() {
-    this.af.auth.subscribe(user => {
-      if (user) {
-        console.log("Is logged in: ", user.google);
-        return user.google;
-      }
-      else {
-        console.log("Is not logged in: ", user.google);
-        return null;
-      }
-    });
+  authenticate() {
+    return this.af.auth;
   }
 
   login() {
-
     this.af.auth.login({
       provider: AuthProviders.Google
     });
     console.log("Logged in");
-
   }
 
   logout() {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { PageTitleComponent } from '../../shared/components/page-title.component';
 import { AuthenticationService } from '../../shared/services/authentication.service';
+import { PageTitleComponent } from '../../shared/components/page-title.component';
+import { ProductsService } from '../../shared/services/products.service';
 
 @Component({
   selector: "shopping-cart",
@@ -8,27 +9,38 @@ import { AuthenticationService } from '../../shared/services/authentication.serv
   styleUrls: []
 })
 export class ShoppingCartComponent {
-  isCartEmpty: boolean = true;
+  isCartEmpty: boolean = false;
   userKey:string;
-  //loggedIn: boolean;
   pageTitle: string = "Your Shopping Cart";
 
-  constructor(){ }
+  productKeys: any[];
+  productsInfo: any[];
 
-  //constructor(private auth: AuthenticationService){ }
+  constructor(private productsService: ProductsService, private auth: AuthenticationService) { }
 
-  //ngOnInit() {
-  //  this.auth.isLoggedIn()
-  //    .subscribe((user) => {
-  //      if(user) {
-  //        this.loggedIn = true;
-  //        this.userKey = user.google.uid;
-  //        console.log("Not logged in page says user is logged in:", this.userKey);
-  //      }
-  //      else {
-  //        this.loggedIn = false;
-  //        this.userKey = "";
-  //      }
-  //    })
-  //}
+  ngOnInit() {
+    this.auth.authenticate()
+      .subscribe((user) => {
+        if(user) {
+          this.userKey = user.google.uid;
+          console.log("User key: ", this.userKey);
+          this.productsService.getUserCartProductsIds(this.userKey)
+            .subscribe(userProductIds =>  {
+              console.log("userProductInfo: ", userProductIds);
+              this.productKeys = userProductIds;
+              this.productsInfo = userProductIds;
+
+
+              if(this.productKeys.length == 0 || this.productKeys == null || this.productKeys == undefined) {
+                this.isCartEmpty = true;
+              } else {
+                this.isCartEmpty = false;
+              }
+            });
+        }
+        else {
+          this.userKey = "";
+        }
+      });
+  }
 }

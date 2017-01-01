@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ProductsService } from '../shared/services/products.service'
 
 @Component({
   selector: 'app-products',
@@ -8,13 +8,18 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class ProductsComponent implements OnInit {
 
-  items: FirebaseListObservable<any[]>;
+  productQuantity: number = 1;
 
-  constructor(private af: AngularFire){
-    this.items = af.database.list('/items');
+  constructor(private productService: ProductsService){
   }
 
   ngOnInit() {
   }
+
+
+  addProductToCart(){
+      this.productService.addProductToCart(localStorage.getItem('userKey'), "3" , this.productQuantity );
+  }
+
 
 }
