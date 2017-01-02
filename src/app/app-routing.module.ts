@@ -8,7 +8,7 @@ import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
-//import { CheckoutComponent } from './user/checkout/checkout.component';
+import { CheckoutComponent } from './user/checkout/checkout.component';
 
 const appRoutes: Routes = [
   {
@@ -24,10 +24,11 @@ const appRoutes: Routes = [
     path:"user/shopping-cart", component: ShoppingCartComponent
   },
   {
-    path:"wishlist", component: WishlistComponent
+    path:"user/wishlist", component: WishlistComponent
   },
-    //path:"user/shopping-cart/checkout", component: CheckoutComponent
-  //}
+  {
+    path:"user/checkout", component: CheckoutComponent
+  },
   {
     path:"", component: HomeComponent
   },
