@@ -7,14 +7,18 @@ import { BookCategoriesComponent } from './book-categories/book-categories.compo
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
+<<<<<<< HEAD
 import { WishlistComponent } from './user/wishlist/wishlist.component';
+=======
+import { CheckoutComponent } from './user/checkout/checkout.component';
+>>>>>>> ec96ba1402ff3f7a2b372377b0518c312f3c1af5
 
 const appRoutes: Routes = [
   {
     path: 'categories', component: CategoriesComponent
   },
   {
-    path: 'products', component: ProductComponent
+    path: 'products/:productKey', component: ProductComponent
   },
   {
     path: 'books/categories/:categoryName', component: BookCategoriesComponent
@@ -23,8 +27,13 @@ const appRoutes: Routes = [
     path:"user/shopping-cart", component: ShoppingCartComponent
   },
   {
+<<<<<<< HEAD
     path:"wishlist", component: WishlistComponent
   },
+=======
+    path:"user/shopping-cart/checkout", component: CheckoutComponent
+  }
+>>>>>>> ec96ba1402ff3f7a2b372377b0518c312f3c1af5
   {
     path:"", component: HomeComponent
   },
