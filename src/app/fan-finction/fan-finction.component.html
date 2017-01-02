@@ -1,13 +1,19 @@
-<page-title [pageTitle]="pageTitle"></page-title>
-  <ul *ngFor="let item of products">
-    <div class="row">
-      <div class="col-sm-3">
-        <li> <img src="{{item.imageUrl}}" class="img-thumbnail"> </li>
+<div class="header-holder"></div>
+<div class="container">
+  <div class="row">
+    <ul *ngFor="let item of products">
+      <div class="row">
+        <div class="col-sm-3">
+          <li>
+            <img src="{{item.imageUrl}}" class="img-thumbnail">
+          </li>
+        </div>
+        <div class="col-sm-6">
+          <li> <h1> <a routerLink="/fan-fiction/{{item.$key}}">  {{item.title}}  </a></h1></li>
+          <li>by <strong> {{item.author}} </strong></li>
+          <li> <p> {{item.description}}  </p> </li>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <li> <h1> <a routerLink="/fan-fiction-story/{{item.$key}}">  {{item.title}}  </a></h1></li>
-        <li>by <strong> {{item.author}} </strong></li>
-        <li> <p> {{item.description}}  </p> </li>
-      </div>
-    </div>
-  </ul> 
+    </ul>
+  </div>
+</div>

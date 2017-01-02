@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ProductsService } from '../shared/services/products.service';
+import { PageTitle } from '../shared/components/page-title.component';
 
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 import { SortPipe } from '../shared/pipes/sort.pipe';

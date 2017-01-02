@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     path:"fan-fiction", component: FanFinctionComponent
   },
   {
-    path: "fan-fiction-story/:productKey", component: FanFictionStoryComponent
+    path:"fan-fiction/:productKey", component: FanFictionStoryComponent
   },
   {
     path:"", component: HomeComponent

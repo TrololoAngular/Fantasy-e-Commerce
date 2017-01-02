@@ -1,16 +1,21 @@
-<page-title [pageTitle]="pageTitle"></page-title>
 <div class="header-holder"></div>
+<img src="{{product?.imageUrl}}" class="img-header" />
 <div class="container">
    <div class="row">
-    <div class="col-md-8">
-        <h1>{{product?.title}}</h1>
-        <p class="author">{{product?.author}}</p>
+     <div class="col-md-12">
+       <h1 class="text-center margin-top-50px">{{product?.title}}</h1>
+     </div>
+    <div class="col-md-12">
+      <p class="author text-center">{{product?.author}}</p>
+      <hr>
     </div>
    </div>
    <div class="row">
-     <p>
-       {{product?.content}}
-     </p>
+     <div class="col-sm-12">
+       <p>
+         {{product?.content}}
+       </p>
+     </div>
    </div>
 </div>
 
