@@ -15,6 +15,22 @@ export class ProductPreviewComponent implements OnInit {
     return this.product.title;
   }
 
+  get imageUrl(): string {
+    return this.product.imageUrl;
+  }
+
+  get author(): string {
+    return this.product.author;
+  }
+
+  get rating(): number {
+    return this.product.rating;
+  }
+
+  get price(): number {
+    return this.product.price;
+  }
+
   ngOnInit() {
 
   }
