@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2';
 import { IterateObjectsPipe } from '../shared/pipes/iterate-objects.pipe';
-import { BookCategoriesService } from '../book-categories/book-categories.service';
+import { ProductsService } from '../shared/services/products.service';
 
 @Component ({
   selector: 'category-details',
@@ -17,10 +17,10 @@ export class HomeCategoryDetailsComponent {
     mainCategory: any;
 
 
-  constructor(private booksService: BookCategoriesService){ }
+  constructor(private productsService: ProductsService){ }
 
   ngOnInit(){
-    const subCategories$ = this.booksService.getSubcategoryByType(`${this.mainCategory.subCategories}`);
+    const subCategories$ = this.productsService.getSubcategoryByType(`${this.mainCategory.subCategories}`);
     subCategories$.subscribe(result => {
       this.subCategories = result;
     });

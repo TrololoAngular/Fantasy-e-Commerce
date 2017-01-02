@@ -9,6 +9,8 @@ import { CarouselModule } from 'ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { CollapseModule   } from 'ng2-bootstrap';
+//import { CategoriesModule } from './categories/categories.module';
+//import { CategoriesRoutingModule } from './categories/categories-routing.module';
 
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import { firebaseConfig } from './../environments/firebase.config';
@@ -82,6 +84,8 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     AppRoutingModule,
     Ng2BootstrapModule,
     RatingModule,
+    //CategoriesModule,
+    //CategoriesRoutingModule,
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     TabsModule.forRoot(),

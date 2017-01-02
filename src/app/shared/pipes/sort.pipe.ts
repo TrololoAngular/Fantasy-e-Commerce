@@ -11,14 +11,11 @@ export class SortPipe {
     if (!products || products.length === 0) {
       return undefined;
     }
-    console.log(propertyName);
 
     const sortedProducts = products.sort((first: any, second: any): number => {
       let comparison;
-      if(typeof first[propertyName] === "number") {
-        //first[propertyName] = first[propertyName] + "";
-        //second[propertyName] = second[propertyName] + "";
 
+      if(typeof first[propertyName] === "number") {
         if(first[propertyName] > second[propertyName]){
           comparison = 1;
         } else if (first[propertyName] < second[propertyName]) {

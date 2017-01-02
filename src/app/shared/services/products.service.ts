@@ -8,6 +8,10 @@ import 'rxjs/add/operator/map';
 export class ProductsService {
   constructor( private af: AngularFire) { }
 
+  getMainCategories(){
+    return this.af.database.list('/mainCategories');
+  }
+
   getAllProducts() {
     return this.af.database.list('/books');
   }
