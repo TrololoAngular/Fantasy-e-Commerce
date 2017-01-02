@@ -15,4 +15,8 @@ export class ProductPreviewComponent implements OnInit {
     return this.product.title;
   }
 
+  ngOnInit() {
+
+  }
+
 }

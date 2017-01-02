@@ -1,28 +1,35 @@
 <page-title [pageTitle]="pageTitle"></page-title>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-      <h2>Fantasy Books</h2>
-      <ul>
-        <li *ngFor="let bookCategory of bookCategories">
-           {{bookCategory.title}}
-        </li>
-      </ul>
-      <h2>Fantasy Jewellery</h2>
-      <ul>
-        <li *ngFor="let jewelleryCategory of jewelleryCategories">
-          {{jewelleryCategory.title}}
-        </li>
-      </ul>
-      <h2>Fantasy Clothing</h2>
-      <ul>
-        <li *ngFor="let clothingCategory of clothingCategories">
-          {{clothingCategory.title}}
-        </li>
-      </ul>
+    <div class="col-sm-2">
+      <div class="sideBar">
+        <div class="sidebar-main-category">
+          <h5>Fantasy Books</h5>
+          <ul>
+            <li *ngFor="let bookCategory of bookCategories">
+              {{bookCategory.title}}
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-main-category">
+          <h5>Fantasy Jewellery</h5>
+          <ul>
+            <li *ngFor="let jewelleryCategory of jewelleryCategories">
+              {{jewelleryCategory.title}}
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-main-category">
+          <h5>Fantasy Clothing</h5>
+          <ul>
+            <li *ngFor="let clothingCategory of clothingCategories">
+              {{clothingCategory.title}}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-8">
-
+    <div class="col-sm-10">
       <ul>
         <li *ngFor="let product of products">
           <app-product-preview [product]="product"></app-product-preview>

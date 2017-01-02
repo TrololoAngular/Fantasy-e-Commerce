@@ -10,10 +10,10 @@ import { ProductsService } from '../shared/services/products.service';
 export class CategoriesComponent implements OnInit {
 
   pageTitle: string = "Category page";
-  bookCategories: FirebaseListObservable<any[]>;
-  jewelleryCategories: FirebaseListObservable<any[]>;
-  clothingCategories: FirebaseListObservable<any[]>;
-  products: FirebaseListObservable<any[]>;
+  bookCategories: any[];
+  jewelleryCategories: any[];
+  clothingCategories: any[];
+  products: any[];
 
   constructor(private productsService: ProductsService) { }
 
