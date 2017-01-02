@@ -13,11 +13,15 @@ export class ProductsService {
   }
 
   getUserCartProductsIds(){
-    return this.af.database.list(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}`);
+    if(JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')) !== undefined) {
+      return this.af.database.list(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}`);
+    }
   }
 
   getUserWishlistProductsIds(){
-    return this.af.database.list(`userWishListItems/${JSON.parse(localStorage.getItem('user')).uid}`);
+    if(JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')) !== undefined) {
+      return this.af.database.list(`userWishListItems/${JSON.parse(localStorage.getItem('user')).uid}`);
+    }
   }
 
   getProductByKey(productKey: string) {

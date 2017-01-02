@@ -42,11 +42,13 @@ export class HeaderComponent{
   }
 
   ngOnInit() {
-    this.productsService.getUserCartProductsIds()
-      .subscribe(productsInfo => {
-        this.cartQuantity = 0;
-        productsInfo.forEach(product => this.cartQuantity += +product.quantity);
-      })
+    if (JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')) !== undefined) {
+      this.productsService.getUserCartProductsIds()
+        .subscribe(productsInfo => {
+          this.cartQuantity = 0;
+          productsInfo.forEach(product => this.cartQuantity += +product.quantity);
+        })
+    }
   }
 
   login() {
