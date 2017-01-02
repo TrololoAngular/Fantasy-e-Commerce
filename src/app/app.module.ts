@@ -31,6 +31,7 @@ import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CartProductPreviewComponent } from './user/cart/cart-product-preview.component';
 import { PageTitleComponent } from './shared/components/page-title.component';
 import { UserRatingComponent } from './products/user-rating.component';
+import { CheckoutComponent } from './user/checkout/checkout.component';
 
 
 //Modules
@@ -62,7 +63,8 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     BookCategoriesComponent,
     ShoppingCartComponent,
     NotLoggedInComponent,
-    UserRatingComponent
+    UserRatingComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
