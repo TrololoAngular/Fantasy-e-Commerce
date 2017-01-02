@@ -1,0 +1,33 @@
+#order-btn {
+  width: 100%;
+  background-color: #228d99;
+  color: white;
+  border-radius: 0px;
+}
+
+.checkout-info {
+  font-family: Metric, Arial, Gadget, sans-serif;
+}
+
+.checkout-info input, select{
+    border-radius: 0px;
+}
+
+.order-details {
+  font-family: Metric, Arial, Gadget, sans-serif;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.price {
+    color: #228d99;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+
+
+

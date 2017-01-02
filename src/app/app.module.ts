@@ -29,6 +29,8 @@ import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { WishlistPreviewComponent } from './user/wishlist/wishlist-preview.component';
+import { FanFinctionComponent } from './fan-finction/fan-finction.component';
+import { FanFictionStoryComponent } from './fan-fiction-story/fan-fiction-story.component';
 
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CartProductPreviewComponent } from './user/cart/cart-product-preview.component';
@@ -62,6 +64,8 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     ProductPreviewComponent,
     ProductComponent,
     ProductBarComponent,
+    FanFinctionComponent,
+    FanFictionStoryComponent,
 
     CartProductPreviewComponent,
     WishlistPreviewComponent,

@@ -38,7 +38,7 @@ export class CategoriesComponent implements OnInit {
 
     this.productsService.getAllProducts()
       .subscribe(products => this.products = products);
-  }
+  } 
 
   setTitle(mainCategory: string, subCategory: string) {
     if(subCategory !== undefined) {
