@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     path: 'categories', component: CategoriesComponent
   },
   {
-    path: 'products', component: ProductComponent
+    path: 'products/:productKey', component: ProductComponent
   },
   {
     path: 'books/categories/:categoryName', component: BookCategoriesComponent

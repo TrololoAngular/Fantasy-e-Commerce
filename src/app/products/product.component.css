@@ -14,13 +14,23 @@ h1{
 }
 
 .author{
-    font-size: 25px;
+  font-size: 25px;
+  margin-top:-10px;
+}
+.description {
+  margin-top: 20px;
+}
+
+.product-main{
+  border-right:4px solid #228d99;
+  padding-right:20px;
+  height:322px;
 }
 
 .product-price{
   font-size: 35px;
   color: #228d99;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .in-stock{
@@ -64,7 +74,7 @@ h1{
   width:100%;
   padding: 30px 0;
   margin-top: 50px;
-  background: #f9f9f9;
+  background: #e6e6e6;
 }
 .tabs-content{
     margin-top: 20px;
