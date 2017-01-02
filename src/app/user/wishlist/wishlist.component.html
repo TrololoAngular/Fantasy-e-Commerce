@@ -1,0 +1,53 @@
+<article>
+  <page-title [pageTitle]="pageTitle"></page-title>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <section *ngIf="isCartEmpty">
+          <div class="Aligner">
+            <div class="empty-cart-icon"></div>
+          </div>
+          <div class="Aligner wrap-content">
+            <h2>YOUR WISHLIST IS CURRENTLY EMPTY.</h2>
+            <p class="text-center empty-wishlist-p">
+              Before seeing products in your Wishlist page you have to add some.
+              You will find a lot of interesting products on our "Shop" page.
+            </p>
+            <a routerLink="/" class="cta cta-default">
+              Return to Shop
+            </a>
+          </div>
+        </section>
+        <section *ngIf="!isCartEmpty">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr wishlist-preview *ngFor="let productWishlistInfo of productsWishlistInfo" 
+                  [productWishlistInfo]="productWishlistInfo"></tr>
+                  </tbody>
+                </table>
+                <!--<div wishlist-preview *ngFor="let productWishlistInfo of productsWishlistInfo" 
+                [productWishlistInfo]="productWishlistInfo">
+                </div>-->
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </div>
+</article>
+<!--<article *ngIf="!loggedIn">-->
+  <!--<not-logged-in></not-logged-in>-->
+<!--</article>-->

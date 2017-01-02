@@ -16,6 +16,10 @@ export class ProductsService {
     return this.af.database.list(`userCartItems/${localStorage.getItem('userKey')}`);
   }
 
+  getUserWishlistProductsIds(){
+    return this.af.database.list(`userWishListItems/${JSON.parse(localStorage.getItem('user')).uid}`);
+  }
+
   getProductByKey(productKey: string) {
     return this.af.database.object(`books/${productKey}`);
   }
@@ -36,6 +40,13 @@ export class ProductsService {
       quantity: productQuantity
     };
     this.af.database.list(`userCartItems/${userKey}`).push(productInfo);
+  }
+
+  addProductToWishlist(userKey: string, productKey: string) {
+    var productWishlistInfo = {
+      id: productKey
+    };
+    this.af.database.list(`userWishListItems/${userKey}`).push(productWishlistInfo);
   }
 
 }

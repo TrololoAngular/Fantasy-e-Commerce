@@ -7,6 +7,7 @@ import { BookCategoriesComponent } from './book-categories/book-categories.compo
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
+import { WishlistComponent } from './user/wishlist/wishlist.component';
 
 const appRoutes: Routes = [
   {
@@ -20,6 +21,9 @@ const appRoutes: Routes = [
   },
   {
     path:"user/shopping-cart", component: ShoppingCartComponent
+  },
+  {
+    path:"wishlist", component: WishlistComponent
   },
   {
     path:"", component: HomeComponent

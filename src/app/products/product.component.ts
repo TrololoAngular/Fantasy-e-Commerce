@@ -27,7 +27,16 @@ export class ProductComponent implements OnInit {
   }
 
   addProductToCart(){
-      this.productService.addProductToCart(localStorage.getItem('userKey'), this.product.$key , this.productQuantity);
+      this.productService.addProductToCart(
+        JSON.parse(localStorage.getItem('user')).uid,
+        this.product.$key, 
+        this.productQuantity);
+  }
+
+  addProductToWishlist(){
+    this.productService.addProductToWishlist(
+      JSON.parse(localStorage.getItem('user')).uid, 
+      this.product.$key);
   }
 
 

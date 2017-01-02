@@ -26,6 +26,8 @@ import { BookCategoriesComponent } from './book-categories/book-categories.compo
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
+import { WishlistComponent } from './user/wishlist/wishlist.component';
+import { WishlistPreviewComponent } from './user/wishlist/wishlist-preview.component';
 
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CartProductPreviewComponent } from './user/cart/cart-product-preview.component';
@@ -49,12 +51,14 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     AppComponent,
     HeaderComponent,
     HomeCategoryDetailsComponent,
+    WishlistPreviewComponent,
     ProductBarComponent,
     IterateObjectsPipe,
     FooterComponent,
     CartProductPreviewComponent,
     PageTitleComponent,
     HomeComponent,
+    WishlistComponent,
     CategoriesComponent,
     ProductPreviewComponent,
     ProductComponent,
