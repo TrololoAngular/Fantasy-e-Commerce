@@ -4,3 +4,6 @@ img {
   float: left;
   margin-right: 10px;
 }
+td{
+  vertical-align: middle!important;
+}

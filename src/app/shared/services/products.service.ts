@@ -13,11 +13,11 @@ export class ProductsService {
   }
 
   getUserCartProductsIds(){
-    return this.af.database.list(`userCartItems/${localStorage.getItem('userKey')}`);
+    return this.af.database.list(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}`);
   }
 
   getUserWishlistProductsIds(){
-    return this.af.database.list(`userWishListItems/${localStorage.getItem('userKey')}`);
+    return this.af.database.list(`userWishListItems/${JSON.parse(localStorage.getItem('user')).uid}`);
   }
 
   getProductByKey(productKey: string) {
@@ -28,11 +28,6 @@ export class ProductsService {
     const subCategory = this.af.database.object(`/${type}`);
     return subCategory;
   }
-
-
-  //updateProductQuantityInCart(userKey: string, productKey: string, newProductQuantity: string){
-  //    this.af.database.object(`books/${userKey}/`)
-  //}
 
   addProductToCart(userKey: string, productKey: string, productQuantity: number) {
     var productInfo = {

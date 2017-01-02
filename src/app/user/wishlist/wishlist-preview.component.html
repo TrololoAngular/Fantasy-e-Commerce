@@ -1,15 +1,22 @@
 <td>
+  <button class="remove-item" (click)="removeItem()">
+    <span class="glyphicon glyphicon-remove-sign"></span>
+  </button>
+</td>
+<td>
   <img src="{{product?.imageUrl}}" />
+</td>
+<td>
   <p>{{product?.title}}</p>
 </td>
 <td>
   {{product?.price}}
 </td>
-<!--<td>
-  <input [value]="productQuantity" type="number"
-         (click)="updateProductInLocalStorage($event.target.value)"
-         (keyup)="updateProductInLocalStorage($event.target.value)" />
-</td>-->
 <td>
-  {{product?.descrition}}
+  In Stock
+</td>
+<td>
+  <button class="add-to-cart-button" (click)="addProductToCart()">
+    Add to Cart
+  </button>
 </td>

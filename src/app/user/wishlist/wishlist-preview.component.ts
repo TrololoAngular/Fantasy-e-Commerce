@@ -23,11 +23,7 @@ export class WishlistPreviewComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    //   this.productsService.getProductByKey(_productWishlistInfo.id)
-    //    .subscribe(product => {
-    //     this.product = product;
-    //     console.log(this.product)
-    //   });
+
   }
 
   get title(): string {
@@ -42,8 +38,12 @@ export class WishlistPreviewComponent implements OnInit {
     return this.product.price;
   }
 
-//   updateProductInLocalStorage(value) {
-//     console.log("Value: ", value);
-//   }
+  addProductToCart() {
+    console.log("Add to cart");
+  }
+
+  removeProductFromWishlist() {
+    console.log("Remove product from wishlist");
+  }
 
 }

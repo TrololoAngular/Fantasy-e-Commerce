@@ -16,37 +16,29 @@
         <p>{{product?.description}}</p>
       </div>
     </div>
-<<<<<<< HEAD
-    <div class="row add-to-cart">
-      <div class="col-md-12 bottom-rule">
-        <input type="number" [(ngModel)]="productQuantity" class="quantity-input"/>
-        <button class="add-to-cart-button" (click)="addProductToCart()">
-          Add to Cart
-        </button>
-        <button class="add-to-cart-button" (click)="addProductToWishlist()">
-          Add to Wishlist
-        </button>
-=======
-    <div class="col-md-4">
-      <div class="product-side">
-        <h4>Hardcover</h4>
-        <div class="row">
-          <div class="col-md-4 in-stock">
-            <h6 class="product-price">{{product?.price | currency: 'USD': true }}</h6>
-            <span>In Stock</span>
-          </div>
-        </div>
-        <div class="row add-to-cart">
-          <div class="col-md-12 bottom-rule">
-            <input type="number" [(ngModel)]="productQuantity" class="quantity-input"/>
-            <button class="add-to-cart-button" (click)="addProductToCart()">
-              Add to Cart
-            </button>
-          </div>
-        </div>
->>>>>>> ec96ba1402ff3f7a2b372377b0518c312f3c1af5
-      </div>
-    </div>
+     <div class="col-md-4">
+       <div class="product-side">
+         <h4>Hardcover</h4>
+         <div class="row">
+           <div class="col-md-4 in-stock">
+             <h6 class="product-price">{{product?.price | currency: 'USD': true }}</h6>
+             <span>In Stock</span>
+           </div>
+         </div>
+         <div class="row add-to-cart">
+           <div class="col-md-12 bottom-rule">
+             <input type="number" [(ngModel)]="productQuantity" class="quantity-input"/>
+             <button class="add-to-cart-button" (click)="addProductToCart()">
+               Add to Cart
+             </button>
+             <button class="add-to-wishlist" (click)="addProductToWishlist()">
+               <span class="glyphicon glyphicon-heart-empty"></span>
+               Add to Wishlist
+             </button>
+           </div>
+         </div>
+       </div>
+     </div>
    </div>
 </div>
 <div class="tabs-holder">
@@ -55,7 +47,7 @@
       <div class="col-sm-12">
         <div class="tabs">
           <h4 class="text-center">Reviews</h4>
-          <user-product-rating></user-product-rating>
+          <!--<user-product-rating></user-product-rating>-->
         </div>
       </div>
     </div>
