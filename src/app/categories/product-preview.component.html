@@ -1,4 +1,4 @@
-<div class="product-bar ">
+<div class="product-bar">
  <ul>
     <li>
       <a routerLink="/products/{{product.$key}}" class="carousel-image-link">
@@ -6,15 +6,16 @@
         <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
       </a>
       <p class="record-spotlight-title">
-        <a href="#">{{product?.title}}</a>
+        <a routerLink="/products/{{product.$key}}">{{product?.title}}</a>
       </p>
-      by <a href="">{{product?.author}}</a>
+      by <em>{{product?.author}}</em>
       <div class="price">
         {{product?.price | currency: 'USD': true }}
       </div>
       <div class="ratings-display">
         <ai-star [(ngModel)]="rating" [readonly]="true"></ai-star>
       </div>
+      <button class="add-to-cart-button" (click)="addProductToCart()">Add to Cart</button>
     </li>
  </ul>
 </div>

@@ -71,6 +71,7 @@ li{
 .product-bar li p.record-spotlight-title {
   margin: 0 0 3px;
   text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
-  width: 100px;
+  width: 100%;
 }

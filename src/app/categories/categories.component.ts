@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ProductsService } from '../shared/services/products.service';
 
+import { FilterPipe } from '../shared/pipes/filter.pipe';
+import { SortPipe } from '../shared/pipes/sort.pipe';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -14,6 +17,12 @@ export class CategoriesComponent implements OnInit {
   jewelleryCategories: any[];
   clothingCategories: any[];
   products: any[];
+  filterByText: string = "";
+  sortProperty: string = "title";
+  orderValue: string = "ascending";
+
+  private pipeSort: SortPipe = new SortPipe();
+  private pipeFilter: FilterPipe = new FilterPipe();
 
   constructor(private productsService: ProductsService) { }
 
@@ -40,15 +49,18 @@ export class CategoriesComponent implements OnInit {
   }
 
   onSearchInput(searchInput: string) {
-    console.log("Search input: ", searchInput);
+    this.filterByText = searchInput;
+    this.pipeFilter.transform(this.products, searchInput);
   }
 
   sortByProperty(sortValue: string) {
-    console.log("Sort value: ", sortValue);
+    this.sortProperty = sortValue;
+    this.pipeSort.transform(this.products, [this.sortProperty.toLowerCase(), this.orderValue.toLowerCase()]);
   }
 
   Order(orderValue: string) {
-    console.log("Order value: ", orderValue);
+    this.orderValue = orderValue;
+    this.pipeSort.transform(this.products, [this.sortProperty.toLowerCase(), this.orderValue.toLowerCase()]);
   }
 
 }

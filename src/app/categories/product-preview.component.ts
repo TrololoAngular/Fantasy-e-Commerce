@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ProductsService } from '../shared/services/products.service';
 
 @Component({
   selector: 'app-product-preview',
@@ -9,7 +10,7 @@ export class ProductPreviewComponent implements OnInit {
 
   @Input("product") product: any;
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   get title(): string {
     return this.product.title;
@@ -35,4 +36,16 @@ export class ProductPreviewComponent implements OnInit {
 
   }
 
+  addProductToCart(){
+    this.productsService.addProductToCart(
+      JSON.parse(localStorage.getItem('user')).uid,
+      this.product.$key,
+      1);
+  }
+
+  addProductToWishlist(){
+    this.productsService.addProductToWishlist(
+      JSON.parse(localStorage.getItem('user')).uid,
+      this.product.$key);
+  }
 }

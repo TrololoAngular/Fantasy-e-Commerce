@@ -22,7 +22,6 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductComponent } from './products/product.component';
 import { ProductPreviewComponent } from './categories/product-preview.component';
-import { BookCategoriesComponent } from './book-categories/book-categories.component';
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
@@ -40,35 +39,41 @@ import { CheckoutComponent } from './user/checkout/checkout.component';
 import { RatingModule } from './shared/star.component';
 
 //Services
-import { BookCategoriesService } from './book-categories/book-categories.service';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { ProductsService } from './shared/services/products.service';
 
 //Pipes
 import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { SortPipe } from './shared/pipes/sort.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeCategoryDetailsComponent,
-    WishlistPreviewComponent,
-    ProductBarComponent,
-    IterateObjectsPipe,
     FooterComponent,
-    CartProductPreviewComponent,
-    PageTitleComponent,
+
     HomeComponent,
-    WishlistComponent,
+    HomeCategoryDetailsComponent,
     CategoriesComponent,
     ProductPreviewComponent,
     ProductComponent,
-    BookCategoriesComponent,
+    ProductBarComponent,
+
+    CartProductPreviewComponent,
+    WishlistPreviewComponent,
+    WishlistComponent,
     ShoppingCartComponent,
-    NotLoggedInComponent,
     //UserRatingComponent,
-    CheckoutComponent
+    CheckoutComponent,
+
+    PageTitleComponent,
+    NotLoggedInComponent,
+
+    IterateObjectsPipe,
+    FilterPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,6 @@ import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
     })
   ],
   providers: [
-    BookCategoriesService,
     AuthenticationService,
     ProductsService
   ],
