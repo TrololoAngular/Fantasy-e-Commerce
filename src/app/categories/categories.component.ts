@@ -9,7 +9,7 @@ import { ProductsService } from '../shared/services/products.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  pageTitle: string = "Category page";
+  pageTitle: string = "Fantasy Books";
   bookCategories: any[];
   jewelleryCategories: any[];
   clothingCategories: any[];
@@ -29,6 +29,26 @@ export class CategoriesComponent implements OnInit {
 
     this.productsService.getAllProducts()
       .subscribe(products => this.products = products);
+  }
+
+  setTitle(mainCategory: string, subCategory: string) {
+    if(subCategory !== undefined) {
+      this.pageTitle = `${mainCategory}: ${subCategory}`;
+    } else {
+      this.pageTitle = `${mainCategory}`;
+    }
+  }
+
+  onSearchInput(searchInput: string) {
+    console.log("Search input: ", searchInput);
+  }
+
+  sortByProperty(sortValue: string) {
+    console.log("Sort value: ", sortValue);
+  }
+
+  Order(orderValue: string) {
+    console.log("Order value: ", orderValue);
   }
 
 }

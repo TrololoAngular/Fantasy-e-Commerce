@@ -3,33 +3,61 @@
   <div class="row">
     <div class="col-sm-2">
       <div class="sideBar">
+        <div class="form-group">
+          <label for="search">Search:</label>
+          <input type="text" id="search" class="form-control" (keyup)="onSearchInput($event.target.value)"/>
+        </div>
         <div class="sidebar-main-category">
-          <h5>Fantasy Books</h5>
+          <h5 class="active" (click)="setTitle('Fantasy Books')">Fantasy Books</h5>
           <ul>
-            <li *ngFor="let bookCategory of bookCategories">
+            <li *ngFor="let bookCategory of bookCategories" (click)="setTitle('Fantasy Books', bookCategory.title)">
               {{bookCategory.title}}
             </li>
           </ul>
         </div>
         <div class="sidebar-main-category">
-          <h5>Fantasy Jewellery</h5>
+          <h5 (click)="setTitle('Fantasy Jewellery')">Fantasy Jewellery</h5>
           <ul>
-            <li *ngFor="let jewelleryCategory of jewelleryCategories">
+            <li *ngFor="let jewelleryCategory of jewelleryCategories" (click)="setTitle('Fantasy Jewellery', jewelleryCategory.title)">
               {{jewelleryCategory.title}}
             </li>
           </ul>
         </div>
         <div class="sidebar-main-category">
-          <h5>Fantasy Clothing</h5>
+          <h5 (click)="setTitle('Fantasy Clothing')">Fantasy Clothing</h5>
           <ul>
-            <li *ngFor="let clothingCategory of clothingCategories">
+            <li *ngFor="let clothingCategory of clothingCategories" (click)="setTitle('Fantasy Clothing', clothingCategory.title)">
               {{clothingCategory.title}}
             </li>
           </ul>
         </div>
+        <div class="sidebar-main-category">
+
+        </div>
       </div>
     </div>
     <div class="col-sm-10">
+      <div class="row">
+        <div class="col-sm-offset-8 col-sm-2">
+          <div class="form-group horizontal">
+            <label for="sortOptions">Price:</label>
+            <select id="sortOptions" class="form-control" (change)="sortByProperty($event.target.value)">
+              <option>$5-10$</option>
+              <option>$10-$20</option>
+              <option>$20-$50</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group horizontal">
+            <label for="orderOptions">Order:</label>
+            <select id="orderOptions" class="form-control" (change)="Order($event.target.value)">
+              <option>Ascending</option>
+              <option>Descending</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <ul>
         <li *ngFor="let product of products">
           <app-product-preview [product]="product"></app-product-preview>

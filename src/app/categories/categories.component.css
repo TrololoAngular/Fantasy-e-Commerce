@@ -1,0 +1,25 @@
+.sideBar {
+  border-right: 4px solid #228d99;
+}
+.sidebar-main-category {
+  border-bottom: 4px solid #228d99;
+  margin-bottom: 15px;
+}
+.sidebar-main-category:last-child{
+  border:none;
+}
+.sideBar ul {
+  padding: 0;
+}
+.sideBar li:hover,
+.sideBar h5:hover{
+  color:#228d99;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.active{
+  color:#228d99;
+}
+.form-group {
+  padding-right: 20px;
+}
