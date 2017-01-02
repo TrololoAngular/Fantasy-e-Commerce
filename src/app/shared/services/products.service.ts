@@ -17,7 +17,7 @@ export class ProductsService {
   }
 
   getUserWishlistProductsIds(){
-    return this.af.database.list(`userWishListItems/${JSON.parse(localStorage.getItem('user')).uid}`);
+    return this.af.database.list(`userWishListItems/${localStorage.getItem('userKey')}`);
   }
 
   getProductByKey(productKey: string) {
