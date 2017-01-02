@@ -38,13 +38,13 @@ export class ProductComponent implements OnInit {
   addProductToCart(){
       this.productService.addProductToCart(
         JSON.parse(localStorage.getItem('user')).uid,
-        this.product.$key, 
+        this.product.$key,
         this.productQuantity);
   }
 
   addProductToWishlist(){
     this.productService.addProductToWishlist(
-      JSON.parse(localStorage.getItem('user')).uid, 
+      JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key);
   }
 
