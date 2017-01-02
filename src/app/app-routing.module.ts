@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
+import { FanFinctionComponent } from './fan-finction/fan-finction.component';
+import { FanFictionStoryComponent } from './fan-fiction-story/fan-fiction-story.component';
 
 const appRoutes: Routes = [
   {
@@ -28,6 +30,12 @@ const appRoutes: Routes = [
   },
   {
     path:"user/checkout", component: CheckoutComponent
+  },
+  {
+    path:"fan-fiction", component: FanFinctionComponent
+  },
+  {
+    path: "fan-fiction-story/:productKey", component: FanFictionStoryComponent
   },
   {
     path:"", component: HomeComponent

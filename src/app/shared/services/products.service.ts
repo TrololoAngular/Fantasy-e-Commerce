@@ -12,6 +12,10 @@ export class ProductsService {
     return this.af.database.list('/books');
   }
 
+  getAllFanFiction() {
+    return this.af.database.list('/fanFiction');
+  }
+
   getUserCartProductsIds(){
     if(JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')) !== undefined) {
       return this.af.database.list(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}`);
@@ -26,6 +30,10 @@ export class ProductsService {
 
   getProductByKey(productKey: string) {
     return this.af.database.object(`books/${productKey}`);
+  }
+
+  getFanFictionByKey(productKey: string) {
+    return this.af.database.object(`fanFiction/${productKey}`);
   }
 
   getSubcategoryByType(type: string): Observable<any> {

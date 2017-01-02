@@ -1,0 +1,100 @@
+img {
+  height: 322px;
+  width: 300px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.author{
+  font-size: 25px;
+  margin-top:-10px;
+}
+.description {
+  margin-top: 20px;
+}
+
+.product-main{
+  border-right:4px solid #228d99;
+  padding-right:20px;
+  height:322px;
+}
+
+.product-price{
+  font-size: 35px;
+  color: #228d99;
+  font-weight: 300;
+}
+
+.in-stock{
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.quantity-input{
+    color: #848484;
+    text-align: center;
+    width: 55px;
+    border: 1px solid gray;
+    font-size: 14px;
+    margin-right: 15px;
+    height: 40px;
+}
+
+
+.tabs-holder{
+  width:100%;
+  padding: 30px 0;
+  margin-top: 50px;
+  background: #e6e6e6;
+}
+.tabs-content{
+    margin-top: 20px;
+}
+.tabs{
+    padding: 25px 0px;
+}
+.tabs-holder a.nav-link.active {
+  background-color: transparent;
+  border-bottom: none;
+}
+.social{
+    margin-top: 20px;
+}
+
+i{
+  color:#818692;
+  font-size: 18px;
+}
+
+.social-icons-circle{
+  display: inline-block;
+  border-radius: 50px;
+  border: 1.5px solid #818692;
+  width: 26px;
+  text-align: center;
+}
+
+.social-icons-circle:hover{
+  background-color: #818692
+}
+
+.social-icons-circle:hover i{
+  color: #fff;
+}
+
+@media (max-width: 1000px){
+    .tabs{
+        margin-left: 0;
+    }
+
+    img{
+        margin-left: 0;
+    }
+}
