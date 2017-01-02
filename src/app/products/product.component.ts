@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../shared/services/products.service';
-import { StarComponent } from '../shared/star.component';
+// import { StarComponent } from '../shared/star.component';
 import { RatingModule } from "../shared/star.component";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe(params => {
-        this.productService.getProductByKey(params.productKey)
+        this.productService.getProductByKey(params['productKey'])
           .subscribe(product => {
             this.product = product;
             this.productRating = product.rating;
