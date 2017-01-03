@@ -32,6 +32,12 @@ export class ProductsService {
     }
   }
 
+  getUserWishlistFictionIds(){
+    if(JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')) !== undefined) {
+      return this.af.database.list(`userWishListFiction/${JSON.parse(localStorage.getItem('user')).uid}`);
+    }
+  }
+
   getProductByKey(productKey: string) {
     return this.af.database.object(`books/${productKey}`);
   }
@@ -41,7 +47,7 @@ export class ProductsService {
   }
 
   getSubcategoryByType(type: string): Observable<any> {
-    const subCategory = this.af.database.object(`/${type}`);
+    const subCategory = this.af.database.object(`/${type}`); 
     return subCategory;
   }
 
@@ -58,6 +64,13 @@ export class ProductsService {
       id: productKey
     };
     this.af.database.list(`userWishListItems/${userKey}`).push(productWishlistInfo);
+  }
+
+  addFictionToWishlist(userKey: string, productKey: string) {
+    var fictionWishlistInfo = {
+      id: productKey
+    };
+    this.af.database.list(`userWishListFiction/${userKey}`).push(fictionWishlistInfo);
   }
 
 }

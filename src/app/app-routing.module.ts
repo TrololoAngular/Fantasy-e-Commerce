@@ -10,6 +10,7 @@ import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { FanFinctionComponent } from './fan-finction/fan-finction.component';
 import { FanFictionStoryComponent } from './fan-fiction-story/fan-fiction-story.component';
+import { FictionWishlistComponent } from './user/fiction-wishlist/fiction-wishlist.component';
 
 const appRoutes: Routes = [
   {
@@ -23,6 +24,9 @@ const appRoutes: Routes = [
   },
   {
     path:"user/wishlist", component: WishlistComponent
+  },
+  {
+    path:"user/fan-fiction-favorite-stories", component: FictionWishlistComponent
   },
   {
     path:"user/checkout", component: CheckoutComponent
