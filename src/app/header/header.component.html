@@ -12,7 +12,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a router-link="/">Book Forest</a>
+        <a routerLink="/">Book Forest</a>
       </div>
       <div class="collapse navbar-collapse"
            (collapsed)="collapsed($event)"
@@ -30,12 +30,12 @@
                 (collapsed)="collapsed($event)"
                 (expanded)="expanded($event)"
                 [collapse]="isBooksCollapsed">
-              <li><a router-link="/">Epic Fantasy</a></li>
-              <li><a router-link="/">Dark Fantasy</a></li>
-              <li><a router-link="/">Vampire Fantasy</a></li>
-              <li><a router-link="/">Sci-fi Fantasy</a></li>
-              <li><a router-link="/">Romantic Fantasy</a></li>
-              <li><a router-link="/">Young Adult Fantasy</a></li>
+              <li><a routerLink="/categories/books/0">Dark Fantasy</a></li>
+              <li><a routerLink="/categories/books/1">Epic Fantasy</a></li>
+              <li><a routerLink="/categories/books/2">Romantic Fantasy</a></li>
+              <li><a routerLink="/categories/books/3">Sci-fi Fantasy</a></li>
+              <li><a routerLink="/categories/books/4">Vampire Fantasy</a></li>
+              <li><a routerLink="/categories/books/5">Young Adult Fantasy</a></li>
             </ul>
           </li>
           <li routerLinkActive="active" class="active menu-dropdown-button">
@@ -50,12 +50,12 @@
                 (collapsed)="collapsed($event)"
                 (expanded)="expanded($event)"
                 [collapse]="isJewelleryCollapsed">
-              <li><a router-link="/">Fantasy Earrings</a></li>
-              <li><a router-link="/">Fantasy Bracelets</a></li>
-              <li><a router-link="/">Fantasy Necklaces</a></li>
-              <li><a router-link="/">Fantasy Rings</a></li>
-              <li><a router-link="/">Fantasy Tiaras</a></li>
-              <li><a router-link="/">Fantasy Brooches</a></li>
+              <li><a routerLink="/categories/jewellery/0">Fantasy Earrings</a></li>
+              <li><a routerLink="/categories/jewellery/1">Fantasy Bracelets</a></li>
+              <li><a routerLink="/categories/jewellery/2">Fantasy Necklaces</a></li>
+              <li><a routerLink="/categories/jewellery/3">Fantasy Rings</a></li>
+              <li><a routerLink="/categories/jewellery/4">Fantasy Tiaras</a></li>
+              <li><a routerLink="/categories/jewellery/5">Fantasy Brooches</a></li>
             </ul>
           </li>
           <li routerLinkActive="active" class="active menu-dropdown-button">
@@ -70,21 +70,17 @@
                 (collapsed)="collapsed($event)"
                 (expanded)="expanded($event)"
                 [collapse]="isClothingCollapsed">
-              <li><a router-link="/">Elvish Clothing</a></li>
-              <li><a router-link="/">Ninja Clothing</a></li>
-              <li><a router-link="/">Gothic Clothing</a></li>
-              <li><a router-link="/">Assassin Clothing</a></li>
-              <li><a router-link="/">Warrior Clothing</a></li>
-              <li><a router-link="/">Rogue Clothing</a></li>
+              <li><a routerLink="/categories/clothing/0">Elvish Clothing</a></li>
+              <li><a routerLink="/categories/clothing/1">Assassin Clothing</a></li>
+              <li><a routerLink="/categories/clothing/2">Ninja Clothin</a></li>
+              <li><a routerLink="/categories/clothing/3">Rogue Clothing</a></li>
+              <li><a routerLink="/categories/clothing/4">Gothic Clothing</a></li>
+              <li><a routerLink="/categories/clothing/5">Warrior Clothing</a></li>
             </ul>
           </li>
+          <li routerLink="/fan-fiction" [routerLinkActive]="['active']">Fan Fiction</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <button class="pointer">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </li>
           <li  *ngIf!="loggedIn">
             <button class="pointer" md-raised-button (click)="login()">
               <span class="glyphicon glyphicon-user"></span>
@@ -110,7 +106,7 @@
               <li role="separator" class="divider"></li>
               <!--<li>
                 <a routerLink="/fan-fiction/{{item.$key}}">
-                <a href="#">Your Profile</a> 
+                <a href="#">Your Profile</a>
               </li>-->
               <li>
                 <a routerLink="/user/fan-fiction-favorite-stories">

@@ -96,6 +96,9 @@ button.pointer {
 .blue-on-hover:hover *{
   color:#228d99;
 }
+.active {
+  background: #228d99!important;
+}
 @media only screen and (max-device-width : 981px) {
   .navbar #mainNav.navbar-nav {
     margin-right:-20px;

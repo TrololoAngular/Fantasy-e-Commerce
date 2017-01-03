@@ -12,7 +12,7 @@ export class WishlistPreviewComponent implements OnInit {
   product: any;
 
   @Input("productWishlistInfo") set productWishlistInfo(_productWishlistInfo){
-    this.productsService.getProductByKey(_productWishlistInfo.id)
+    this.productsService.getProductByKey(_productWishlistInfo.mainCategory, _productWishlistInfo.id)
       .subscribe(product => {
         this.product = product;
         console.log(this.product)

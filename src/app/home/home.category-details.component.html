@@ -1,9 +1,9 @@
 <div class="container margin-top-50px">
-  <div class="row" *ngIf="mainCategory.leftPosition">
+  <div class="row">
     <div  class="col-sm-6">
       <ul class="Aligner wrap-content subcategory-list">
-        <li *ngFor="let subCategory of subCategories"  class="Aligner subcategory">
-          <a routerLink="/books/categories/{{subCategory.title}}" class="white-font">
+        <li *ngFor="let subCategory of subCategories; let i = index;"  class="Aligner subcategory">
+          <a routerLink="/categories/{{mainCategory.type}}/{{i}}" class="white-font">
             <h6 class="subcategory-heading">{{subCategory.title}}</h6>
             <img src="{{subCategory.imageUrl}}">
           </a>
@@ -14,26 +14,7 @@
       <h3>{{mainCategory.title}}</h3>
       <h4 class="script-font custom-subtitle">{{mainCategory.subtitle}}</h4>
       <p>{{mainCategory.description}}</p>
-      <a href="#" class="cta cta-default">Shop Now</a>
-    </div>
-  </div>
-
-  <div class="row" *ngIf="!mainCategory.leftPosition">
-    <div class="col-sm-6">
-      <h3>{{mainCategory.title}}</h3>
-      <h4 class="script-font custom-subtitle">{{mainCategory.subtitle}}</h4>
-      <p>{{mainCategory.description}}</p>
-      <a href="#" class="cta cta-default">Shop Now</a>
-    </div>
-    <div class="col-sm-6">
-      <ul class="Aligner wrap-content subcategory-list">
-        <li *ngFor="let subCategory of subCategories"  class="Aligner subcategory">
-          <a routerLink="/books/categories/{{subCategory.title}}" class="white-font">
-            <h6 class="subcategory-heading">{{subCategory.title}}</h6>
-            <img src="{{subCategory.imageUrl}}">
-          </a>
-        </li>
-      </ul>
+      <a routerLink="/categories/{{mainCategory.type}}" class="cta cta-default">Shop Now</a>
     </div>
   </div>
 </div>
