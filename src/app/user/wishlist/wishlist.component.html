@@ -35,9 +35,10 @@
                   </thead>
                   <tbody>
                   <tr wishlist-preview *ngFor="let productWishlistInfo of productsWishlistInfo"
-                  [productWishlistInfo]="productWishlistInfo"></tr>
+                  [productWishlistInfo]="productWishlistInfo" [itemKey]="productWishlistInfo.$key"></tr>
                   </tbody>
                 </table>
+                <button routerLink="/categories/books" class="cta cta-default"> Return to Shop </button>
                 <!--<div wishlist-preview *ngFor="let productWishlistInfo of productsWishlistInfo"
                 [productWishlistInfo]="productWishlistInfo">
                 </div>-->

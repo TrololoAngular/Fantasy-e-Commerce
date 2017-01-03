@@ -8,3 +8,9 @@ img {
 td{
   vertical-align: middle!important;
 }
+
+input{
+  width: 55px;
+  padding: 5px;
+  float: right;
+}

@@ -78,4 +78,14 @@ export class ProductsService {
     this.af.database.list(`userWishListFiction/${userKey}`).push(fictionWishlistInfo);
   }
 
+  removeItemFromWishlist(itemKey: string){
+    this.af.database.list(`userWishListItems/${JSON.parse(localStorage.getItem('user')).uid}`)
+      .remove(itemKey);
+  }
+
+  removeItemFromCart(itemKey: string){
+    this.af.database.list(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}`)
+      .remove(itemKey);
+  }
+
 }

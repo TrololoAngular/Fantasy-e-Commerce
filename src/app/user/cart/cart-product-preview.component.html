@@ -1,9 +1,16 @@
 <td>
+  <button class="remove-item" (click)="removeProductFromCart(itemKey)">
+    <span class="glyphicon glyphicon-remove-sign"></span>
+  </button>
+</td>
+<td>
   <img src="{{product?.imageUrl}}" />
+</td>
+<td>
   <p>{{product?.title}}</p>
 </td>
 <td>
-  {{product?.price}}
+  {{product?.price | currency: "USD": true}}
 </td>
 <td>
   <input [value]="productQuantity" type="number"
@@ -11,5 +18,8 @@
          (keyup)="updateProductInLocalStorage($event.target.value)" />
 </td>
 <td>
-  {{product?.price * productQuantity}}
+  {{product?.price * productQuantity | currency: "USD": true}}
+</td>
+<td>
+  <button class="cta cta-default">Review Product</button>
 </td>

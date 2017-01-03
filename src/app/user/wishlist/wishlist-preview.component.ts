@@ -12,12 +12,13 @@ export class WishlistPreviewComponent implements OnInit {
   product: any;
   mainCategory: string;
 
+  @Input('itemKey') itemKey:string;
   @Input("productWishlistInfo") set productWishlistInfo(_productWishlistInfo){
+
     this.mainCategory = _productWishlistInfo.mainCategory;
     this.productsService.getProductByKey(_productWishlistInfo.mainCategory, _productWishlistInfo.id)
       .subscribe(product => {
         this.product = product;
-        console.log(this.product)
       });
   }
 
@@ -48,8 +49,8 @@ export class WishlistPreviewComponent implements OnInit {
       1);
   }
 
-  removeProductFromWishlist() {
-    console.log("Remove product from wishlist");
+  removeProductFromWishlist(itemKey: string) {
+    this.productsService.removeItemFromWishlist(itemKey);
   }
 
 }

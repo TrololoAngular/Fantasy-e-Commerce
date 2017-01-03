@@ -24,6 +24,7 @@ export class WishlistComponent {
         this.isLoggedIn = true;
         this.productsService.getUserWishlistProductsIds()
           .subscribe(userProductIds => {
+            console.log("IDs: ", userProductIds);
             this.productKeys = userProductIds;
             this.productsWishlistInfo = userProductIds;
 

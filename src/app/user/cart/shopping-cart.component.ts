@@ -9,7 +9,7 @@ import { AuthenticationService } from '../../shared/services/authentication.serv
   styleUrls: []
 })
 export class ShoppingCartComponent {
-  isLoggedIn:boolean;
+  isLoggedIn: boolean;
   isCartEmpty: boolean = false;
   pageTitle: string = "Your Shopping Cart";
   productKeys: any[];
@@ -24,10 +24,8 @@ export class ShoppingCartComponent {
         this.isLoggedIn = true;
         this.productsService.getUserCartProductsIds()
           .subscribe(userProductIds =>  {
-            console.log("userProductInfo: ", userProductIds);
             this.productKeys = userProductIds;
             this.productsInfo = userProductIds;
-
 
             if(this.productKeys.length == 0 || this.productKeys == null || this.productKeys == undefined) {
               this.isCartEmpty = true;

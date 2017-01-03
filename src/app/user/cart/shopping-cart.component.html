@@ -25,16 +25,24 @@
                 <table class="table table-hover">
                   <thead>
                   <tr>
+                    <th></th>
+                    <th></th>
                     <th>Product</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
+                    <th></th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr cart-product-preview *ngFor="let productInfo of productsInfo" [productInfo]="productInfo"></tr>
+                  <tr cart-product-preview *ngFor="let productInfo of productsInfo"
+                      [itemKey]="productInfo.$key"
+                      [productInfo]="productInfo"></tr>
                   </tbody>
                 </table>
+                <button routerLink="/categories/books" class="cta cta-default">
+                  Continue Shopping
+                </button>
               </div>
             </div>
           </div>

@@ -11,14 +11,12 @@ export class CartProductPreviewComponent implements OnInit {
   productQuantity: string;
   product: any;
 
+  @Input('itemKey') itemKey:string;
   @Input("productInfo") set productInfo(_productInfo){
     this.productsService.getProductByKey(_productInfo.mainCategory,_productInfo.id)
       .subscribe(product => {
         this.product = product;
         this.productQuantity = _productInfo.quantity;
-
-        console.log("Product: ", this.product);
-        console.log("Product info: ", _productInfo);
       });
   }
 
@@ -40,8 +38,8 @@ export class CartProductPreviewComponent implements OnInit {
     return this.product.price;
   }
 
-  updateProductInLocalStorage(value) {
-    console.log("Value: ", value);
+  removeProductFromCart(itemKey: string) {
+    this.productsService.removeItemFromCart(itemKey);
   }
 
 }
