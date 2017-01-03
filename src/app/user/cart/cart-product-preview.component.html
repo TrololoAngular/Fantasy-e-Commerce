@@ -13,9 +13,9 @@
   {{product?.price | currency: "USD": true}}
 </td>
 <td>
-  <input [value]="productQuantity" type="number"
-         (click)="updateProductInLocalStorage($event.target.value)"
-         (keyup)="updateProductInLocalStorage($event.target.value)" />
+  <input class="quantity-input" [value]="productQuantity" type="number"
+         (click)="changeItemQuantity(productId, mainCategory, $event.target.value, itemKey)"
+         (keyup)="changeItemQuantity($event.target.value, itemKey)" />
 </td>
 <td>
   {{product?.price * productQuantity | currency: "USD": true}}

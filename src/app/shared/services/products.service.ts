@@ -88,4 +88,8 @@ export class ProductsService {
       .remove(itemKey);
   }
 
+  updateItemQuantity(newItem, itemKey) {
+    this.af.database.object(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}/${itemKey}`)
+      .update(newItem);
+  }
 }
