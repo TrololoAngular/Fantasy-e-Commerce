@@ -9,7 +9,7 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class NotLoggedInComponent  implements OnInit {
   loggedIn: Boolean = false;
-  pageTitle:string = "Oops, it seems you are not logged in."
+  pageTitle:string = "Oops, it seems you are not logged in.";
 
   constructor(private auth: AuthenticationService){ }
 

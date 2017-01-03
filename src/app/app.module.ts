@@ -26,6 +26,7 @@ import { ProductPreviewComponent } from './categories/product-preview.component'
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
+import { NotFoundComponent } from './shared/components/404-not-found.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { WishlistPreviewComponent } from './user/wishlist/wishlist-preview.component';
 import { FanFinctionComponent } from './fan-finction/fan-finction.component';
@@ -38,7 +39,6 @@ import { CartProductPreviewComponent } from './user/cart/cart-product-preview.co
 import { PageTitleComponent } from './shared/components/page-title.component';
 //import { UserRatingComponent } from './products/user-rating.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
-
 
 //Modules
 import { RatingModule } from './shared/star.component';
@@ -80,6 +80,7 @@ import { SortPipe } from './shared/pipes/sort.pipe';
 
     PageTitleComponent,
     NotLoggedInComponent,
+    NotFoundComponent,
 
     IterateObjectsPipe,
     FilterPipe,

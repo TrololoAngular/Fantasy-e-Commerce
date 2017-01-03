@@ -6,6 +6,7 @@ import { ProductComponent } from './products/product.component';
 import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
+import { NotFoundComponent } from './shared/components/404-not-found.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { FanFinctionComponent } from './fan-finction/fan-finction.component';
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
   {
     path:"", component: HomeComponent
   },
-  { path: '**', component: NotLoggedInComponent }
+  { path: '**', component: NotFoundComponent }
 ];
 @NgModule({
   imports: [
