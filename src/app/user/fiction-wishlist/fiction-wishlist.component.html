@@ -1,4 +1,4 @@
-<article>
+<article *ngIf="isLoggedIn">
   <page-title [pageTitle]="pageTitle"></page-title>
   <div class="container">
     <div class="row">
@@ -45,6 +45,6 @@
     </div>
   </div>
 </article>
-<!--<article *ngIf="!loggedIn">-->
-  <!--<not-logged-in></not-logged-in>-->
-<!--</article>-->
+<article *ngIf="isLoggedIn == false">
+  <not-logged-in></not-logged-in>
+</article>

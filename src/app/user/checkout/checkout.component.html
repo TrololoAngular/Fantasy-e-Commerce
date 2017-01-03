@@ -1,168 +1,177 @@
-<page-title [pageTitle]="pageTitle"></page-title>
-<div class="checkout-info">
-  <div class="container">
-    <div class="row">
-      <h4>BILLING DETAILS</h4>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">First Name *</label>
-            <input type="text" class="form-control" placeholder="First Name">
+<article *ngIf="isLoggedIn">
+  <page-title [pageTitle]="pageTitle"></page-title>
+  <div class="checkout-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>BILLING DETAILS</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" class="form-control" placeholder="First Name">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" class="form-control" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" class="form-control" placeholder="Company Name">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Email Adress *</label>
+                <input type="email" class="form-control" placeholder="Email Adress">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <form>
+                <div class="form-group">
+                  <label>Email Adress *</label>
+                  <input type="email" class="form-control" placeholder="Email Adress">
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-6">
+              <form>
+                <div class="form-group">
+                  <label>Phone *</label>
+                  <input type="text" class="form-control" placeholder="Phone">
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Country *</label>
+                <select class="form-control">
+                  <option>Bulgaria</option>
+                  <option>Romania</option>
+                  <option>Serbia</option>
+                  <option>Greece</option>
+                  <option>Macedonia</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Country *</label>
+                <select class="form-control">
+                  <option>Bulgaria</option>
+                  <option>Romania</option>
+                  <option>Serbia</option>
+                  <option>Greece</option>
+                  <option>Macedonia</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Adress *</label>
+                <input type="text" class="form-control" placeholder="Stree adress">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Floor, apartment, suite">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Town / City *</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>State / County *</label>
+                <select class="form-control">
+                  <option>Blagoevgrad</option>
+                  <option>Burgas</option>
+                  <option>Sofia</option>
+                  <option>Plovdiv</option>
+                  <option>Varna</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Postcode / ZIP *</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
           </div>
-        </form>
-      </div>
-      <div class="col-sm-3">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Last Name *</label>
-            <input type="text" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="col-sm-6">
+          <div class="order-details">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h4>YOUR ORDER</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>PRODUCT</p>
+                </div>
+                <div class="col-sm-6">
+                  <p>PRICE</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>The Amulet of Samarkand *1</p>
+                </div>
+                <div class="col-sm-6">
+                  <p>10.2 $</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>Subtotal</p>
+                </div>
+                <div class="col-sm-6">
+                  <p>10.2 $</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>Shipping</p>
+                </div>
+                <div class="col-sm-6">
+                  <label>
+                    <input type="radio" name="inlineRadioOptions" value="Flat Rate: £12.00"> Free Shipping
+                  </label>
+                  <label>
+                    <input type="radio" name="inlineRadioOptions" value="Flat Rate: £12.00"> Local Delivery
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="total">TOTAL</p>
+                </div>
+                <div class="col-sm-6">
+                  <p class="price">10.2 $</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <button type="submit" class="btn btn-default" id="order-btn">PLACE ORDER</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Company Name</label>
-          <input type="text" class="form-control" placeholder="Company Name">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email Adress *</label>
-            <input type="email" class="form-control" placeholder="Email Adress">
-          </div>
-        </form>
-      </div>
-      <div class="col-sm-3">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Phone *</label>
-            <input type="text" class="form-control" placeholder="Phone">
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Country *</label>
-          <select class="form-control">
-            <option>Bulgaria</option>
-            <option>Romania</option>
-            <option>Serbia</option>
-            <option>Greece</option>
-            <option>Macedonia</option>
-        </select>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Adress *</label>
-          <input type="text" class="form-control" placeholder="Stree adress">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Floor, apartment, suite">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Town / City *</label>
-          <input type="text" class="form-control">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label for="exampleInputEmail1">State / County *</label>
-          <select class="form-control">
-            <option>Blagoevgrad</option>
-            <option>Burgas</option>
-            <option>Sofia</option>
-            <option>Plovdiv</option>
-            <option>Varna</option>
-        </select>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Postcode / ZIP *</label>
-          <input type="text" class="form-control">
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="order-details">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h4>YOUR ORDER</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <p>PRODUCT</p>
-      </div>
-      <div class="col-sm-3">
-        <p>PRICE</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <p>The Amulet of Samarkand *1</p>
-      </div>
-      <div class="col-sm-3">
-        <p>10.2 $</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <p>Subtotal</p>
-      </div>
-      <div class="col-sm-3">
-        <p>10.2 $</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <p>Shipping</p>
-      </div>
-      <div class="col-sm-3">
-        <label>
-            <input type="radio" name="inlineRadioOptions" value="Flat Rate: £12.00"> Free Shipping
-        </label>
-        <label>
-            <input type="radio" name="inlineRadioOptions" value="Flat Rate: £12.00"> Local Delivery
-        </label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <p class="total">TOTAL</p>
-      </div>
-      <div class="col-sm-3">
-        <p class="price">10.2 $</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <button type="submit" class="btn btn-default" id="order-btn">PLACE ORDER</button>
-      </div>
-    </div>
-  </div>
-</div>
+</article>
+<article *ngIf="isLoggedIn == false">
+  <not-logged-in></not-logged-in>
+</article>

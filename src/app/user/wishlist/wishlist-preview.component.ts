@@ -10,8 +10,10 @@ import { ProductsService } from '../../shared/services/products.service';
 export class WishlistPreviewComponent implements OnInit {
 
   product: any;
+  mainCategory: string;
 
   @Input("productWishlistInfo") set productWishlistInfo(_productWishlistInfo){
+    this.mainCategory = _productWishlistInfo.mainCategory;
     this.productsService.getProductByKey(_productWishlistInfo.mainCategory, _productWishlistInfo.id)
       .subscribe(product => {
         this.product = product;
@@ -38,8 +40,12 @@ export class WishlistPreviewComponent implements OnInit {
     return this.product.price;
   }
 
-  addProductToCart() {
-    console.log("Add to cart");
+  addProductToCart(){
+    this.productsService.addProductToCart(
+      this.mainCategory,
+      JSON.parse(localStorage.getItem('user')).uid,
+      this.product.$key,
+      1);
   }
 
   removeProductFromWishlist() {

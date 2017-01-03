@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PageTitleComponent } from '../../shared/components/page-title.component';
 import { ProductsService } from '../../shared/services/products.service';
+import { AuthenticationService } from '../../shared/services/authentication.service';
 
 @Component({
   selector: "shopping-cart",
@@ -8,26 +9,37 @@ import { ProductsService } from '../../shared/services/products.service';
   styleUrls: []
 })
 export class ShoppingCartComponent {
+  isLoggedIn:boolean;
   isCartEmpty: boolean = false;
   pageTitle: string = "Your Shopping Cart";
   productKeys: any[];
   productsInfo: any[];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private auth: AuthenticationService, private productsService: ProductsService){
+  }
 
   ngOnInit() {
-    this.productsService.getUserCartProductsIds()
-      .subscribe(userProductIds =>  {
-        console.log("userProductInfo: ", userProductIds);
-        this.productKeys = userProductIds;
-        this.productsInfo = userProductIds;
+    this.auth.authenticate().subscribe(user => {
+      if(user) {
+        this.isLoggedIn = true;
+        this.productsService.getUserCartProductsIds()
+          .subscribe(userProductIds =>  {
+            console.log("userProductInfo: ", userProductIds);
+            this.productKeys = userProductIds;
+            this.productsInfo = userProductIds;
 
 
-        if(this.productKeys.length == 0 || this.productKeys == null || this.productKeys == undefined) {
-          this.isCartEmpty = true;
-        } else {
-          this.isCartEmpty = false;
-        }
-      });
+            if(this.productKeys.length == 0 || this.productKeys == null || this.productKeys == undefined) {
+              this.isCartEmpty = true;
+            } else {
+              this.isCartEmpty = false;
+            }
+          });
+       }
+      else {
+        this.isLoggedIn = false;
+      }
+    });
+
   }
 }
