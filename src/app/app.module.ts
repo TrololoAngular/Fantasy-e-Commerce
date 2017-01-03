@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -49,6 +48,7 @@ import { ProductsService } from './shared/services/products.service';
 //Pipes
 import { IterateObjectsPipe } from './shared/pipes/iterate-objects.pipe';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import { CategoryFilterPipe } from './shared/pipes/categoryFilter.pipe';
 import { SortPipe } from './shared/pipes/sort.pipe';
 
 
@@ -79,7 +79,8 @@ import { SortPipe } from './shared/pipes/sort.pipe';
 
     IterateObjectsPipe,
     FilterPipe,
-    SortPipe
+    SortPipe,
+    CategoryFilterPipe
   ],
   imports: [
     BrowserModule,

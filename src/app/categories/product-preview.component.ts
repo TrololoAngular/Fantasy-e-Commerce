@@ -9,6 +9,8 @@ import { ProductsService } from '../shared/services/products.service';
 export class ProductPreviewComponent implements OnInit {
 
   @Input("product") product: any;
+  @Input("mainCategory") mainCategory: string;
+  @Input("subCategory") subCategory: string;
 
   constructor(private productsService: ProductsService) { }
 
@@ -38,6 +40,7 @@ export class ProductPreviewComponent implements OnInit {
 
   addProductToCart(){
     this.productsService.addProductToCart(
+      this.mainCategory,
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key,
       1);
@@ -45,6 +48,7 @@ export class ProductPreviewComponent implements OnInit {
 
   addProductToWishlist(){
     this.productsService.addProductToWishlist(
+      this.mainCategory,
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key);
   }

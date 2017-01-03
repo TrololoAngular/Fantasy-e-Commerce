@@ -24,7 +24,7 @@ h1{
 .product-main{
   border-right:4px solid #228d99;
   padding-right:20px;
-  height:322px;
+  /*height:322px;*/
 }
 
 .product-price{

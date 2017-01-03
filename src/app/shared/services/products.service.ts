@@ -12,6 +12,10 @@ export class ProductsService {
     return this.af.database.list('/mainCategories');
   }
 
+  getProductsByMainCategory(mainCategory: string){
+    return this.af.database.list(mainCategory);
+  }
+
   getAllProducts() {
     return this.af.database.list('/books');
   }
@@ -32,8 +36,8 @@ export class ProductsService {
     }
   }
 
-  getProductByKey(productKey: string) {
-    return this.af.database.object(`books/${productKey}`);
+  getProductByKey(productType: string, productKey: string) {
+    return this.af.database.object(`${productType}/${productKey}`);
   }
 
   getFanFictionByKey(productKey: string) {
@@ -45,16 +49,18 @@ export class ProductsService {
     return subCategory;
   }
 
-  addProductToCart(userKey: string, productKey: string, productQuantity: number) {
+  addProductToCart(mainCategory: string, userKey: string, productKey: string, productQuantity: number) {
     var productInfo = {
+      mainCategory: mainCategory,
       id: productKey,
       quantity: productQuantity
     };
     this.af.database.list(`userCartItems/${userKey}`).push(productInfo);
   }
 
-  addProductToWishlist(userKey: string, productKey: string) {
+  addProductToWishlist(mainCategory: string, userKey: string, productKey: string) {
     var productWishlistInfo = {
+      mainCategory: mainCategory,
       id: productKey
     };
     this.af.database.list(`userWishListItems/${userKey}`).push(productWishlistInfo);

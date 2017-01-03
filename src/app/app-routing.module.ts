@@ -16,7 +16,13 @@ const appRoutes: Routes = [
     path: 'categories', component: CategoriesComponent
   },
   {
-    path: 'products/:productKey', component: ProductComponent
+    path: 'categories/:mainCategory', component: CategoriesComponent
+  },
+  {
+    path: 'categories/:mainCategory/:subCategoryId', component: CategoriesComponent
+  },
+  {
+    path: 'categories/:mainCategory/:subCategoryId/products/:productKey', component: ProductComponent
   },
   {
     path:"user/shopping-cart", component: ShoppingCartComponent

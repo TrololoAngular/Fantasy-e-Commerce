@@ -1,12 +1,12 @@
 <div class="product-bar">
  <ul>
     <li>
-      <a routerLink="/products/{{product.$key}}" class="carousel-image-link">
+      <a [routerLink]="['/categories/', mainCategory, subCategory, 'products', product?.$key]" class="carousel-image-link">
         <img class="full-shadow" src="{{product?.imageUrl}}">
         <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
       </a>
       <p class="record-spotlight-title">
-        <a routerLink="/products/{{product.$key}}">{{product?.title}}</a>
+        <a [routerLink]="['/categories/', mainCategory, subCategory, 'products', product?.$key]" >{{product?.title}}</a>
       </p>
       by <em>{{product?.author}}</em>
       <div class="price">

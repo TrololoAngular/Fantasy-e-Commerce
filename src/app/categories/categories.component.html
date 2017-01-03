@@ -8,25 +8,31 @@
           <input type="text" id="search" class="form-control" (keyup)="onSearchInput($event.target.value)"/>
         </div>
         <div class="sidebar-main-category">
-          <h5 class="active" (click)="setTitle('Fantasy Books')">Fantasy Books</h5>
+          <h5 routerLink="/categories/books" [routerLinkActive]="['active']">Fantasy Books</h5>
           <ul>
-            <li *ngFor="let bookCategory of bookCategories" (click)="setTitle('Fantasy Books', bookCategory.title)">
+            <li *ngFor="let bookCategory of bookCategories; let i = index"
+                [routerLink]="['/categories/books', i]" [routerLinkActive]="['active']"
+                (click)="setTitle('Fantasy Books', 'books', bookCategory.title, i)">
               {{bookCategory.title}}
             </li>
           </ul>
         </div>
         <div class="sidebar-main-category">
-          <h5 (click)="setTitle('Fantasy Jewellery')">Fantasy Jewellery</h5>
+          <h5 routerLink="/categories/jewellery" [routerLinkActive]="['active']">Fantasy Jewellery</h5>
           <ul>
-            <li *ngFor="let jewelleryCategory of jewelleryCategories" (click)="setTitle('Fantasy Jewellery', jewelleryCategory.title)">
+            <li *ngFor="let jewelleryCategory of jewelleryCategories; let i = index"
+                [routerLink]="['/categories/jewellery', i]" [routerLinkActive]="['active']"
+                (click)="setTitle('Fantasy Jewellery',jewellery, jewelleryCategory.title, i)">
               {{jewelleryCategory.title}}
             </li>
           </ul>
         </div>
         <div class="sidebar-main-category">
-          <h5 (click)="setTitle('Fantasy Clothing')">Fantasy Clothing</h5>
+          <h5 routerLink="/categories/clothing" [routerLinkActive]="['active']">Fantasy Clothing</h5>
           <ul>
-            <li *ngFor="let clothingCategory of clothingCategories" (click)="setTitle('Fantasy Clothing', clothingCategory.title)">
+            <li *ngFor="let clothingCategory of clothingCategories; let i = index"
+                [routerLink]="['/categories/clothing', i]" [routerLinkActive]="['active']"
+                (click)="setTitle('Fantasy Clothing', 'clothing', clothingCategory.title, i)">
               {{clothingCategory.title}}
             </li>
           </ul>
@@ -58,8 +64,8 @@
         </div>
       </div>
       <ul>
-        <li *ngFor="let product of (products | filter: filterByText | sort: [title, ascending])">
-          <app-product-preview [product]="product"></app-product-preview>
+        <li *ngFor="let product of (products | categoryFilter: subCategoryId | filter: filterByText | sort: [title, ascending])">
+            <app-product-preview  [product]="product" [mainCategory]="mainCategory" [subCategory]="subCategoryId"></app-product-preview>
         </li>
       </ul>
     </div>

@@ -12,7 +12,7 @@ export class CartProductPreviewComponent implements OnInit {
   product: any;
 
   @Input("productInfo") set productInfo(_productInfo){
-    this.productsService.getProductByKey(_productInfo.id)
+    this.productsService.getProductByKey(_productInfo.mainCategory,_productInfo.id)
       .subscribe(product => {
         this.product = product;
         this.productQuantity = _productInfo.quantity;

@@ -16,6 +16,7 @@ export class ProductComponent implements OnInit {
   product: any;
   productRating:number;
   productQuantity: number = 1;
+  mainCategory: string;
 
   constructor(
     private productService: ProductsService,
@@ -26,8 +27,9 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe(params => {
-        this.productService.getProductByKey(params['productKey'])
+        this.productService.getProductByKey(params['mainCategory'],params['productKey'])
           .subscribe(product => {
+            this.mainCategory =params['mainCategory'];
             this.product = product;
             this.productRating = product.rating;
             console.log("Product: ", this.product);
@@ -37,6 +39,7 @@ export class ProductComponent implements OnInit {
 
   addProductToCart(){
       this.productService.addProductToCart(
+        this.mainCategory,
         JSON.parse(localStorage.getItem('user')).uid,
         this.product.$key,
         this.productQuantity);
@@ -44,6 +47,7 @@ export class ProductComponent implements OnInit {
 
   addProductToWishlist(){
     this.productService.addProductToWishlist(
+      this.mainCategory,
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key);
   }
