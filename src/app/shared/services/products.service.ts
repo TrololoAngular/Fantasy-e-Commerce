@@ -40,6 +40,11 @@ export class ProductsService {
     return this.af.database.object(`${productType}/${productKey}`);
   }
 
+  getUserWishlistFictionIds(){
+    if(JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')) !== undefined) {
+      return this.af.database.list(`userWishListFiction/${JSON.parse(localStorage.getItem('user')).uid}`);
+    }
+  }
   getFanFictionByKey(productKey: string) {
     return this.af.database.object(`fanFiction/${productKey}`);
   }
@@ -64,6 +69,13 @@ export class ProductsService {
       id: productKey
     };
     this.af.database.list(`userWishListItems/${userKey}`).push(productWishlistInfo);
+  }
+
+  addFictionToWishlist(userKey: string, productKey: string) {
+    var fictionWishlistInfo = {
+      id: productKey
+    };
+    this.af.database.list(`userWishListFiction/${userKey}`).push(fictionWishlistInfo);
   }
 
 }

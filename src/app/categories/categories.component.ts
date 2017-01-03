@@ -4,7 +4,7 @@ import { RatingModule } from "../shared/star.component";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { ProductsService } from '../shared/services/products.service';
-import { PageTitle } from '../shared/components/page-title.component';
+import { PageTitleComponent } from '../shared/components/page-title.component';
 
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 import { SortPipe } from '../shared/pipes/sort.pipe';

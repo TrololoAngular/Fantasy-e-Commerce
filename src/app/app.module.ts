@@ -30,6 +30,8 @@ import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { WishlistPreviewComponent } from './user/wishlist/wishlist-preview.component';
 import { FanFinctionComponent } from './fan-finction/fan-finction.component';
 import { FanFictionStoryComponent } from './fan-fiction-story/fan-fiction-story.component';
+import { FictionWishlistComponent } from './user/fiction-wishlist/fiction-wishlist.component';
+import { FictionWishlistPreviewComponent } from './user/fiction-wishlist/fiction-wishlist-preview.component';
 
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CartProductPreviewComponent } from './user/cart/cart-product-preview.component';
@@ -70,6 +72,8 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     CartProductPreviewComponent,
     WishlistPreviewComponent,
     WishlistComponent,
+    FictionWishlistComponent,
+    FictionWishlistPreviewComponent,
     ShoppingCartComponent,
     //UserRatingComponent,
     CheckoutComponent,

@@ -108,17 +108,21 @@
                 Signed in as: <strong>{{user.displayName}}</strong>
               </li>
               <li role="separator" class="divider"></li>
+              <!--<li>
+                <a routerLink="/fan-fiction/{{item.$key}}">
+                <a href="#">Your Profile</a> 
+              </li>-->
               <li>
-                <a href="#">Your Profile</a>
+                <a routerLink="/user/fan-fiction-favorite-stories">
+                  Your Favorite Stories</a>
               </li>
               <li>
-                <a href="#">Your Stories</a>
+                <a routerLink="/user/shopping-cart">
+                Your Shopping Cart</a>
               </li>
               <li>
-                <a href="#">Your Shopping Cart</a>
-              </li>
-              <li>
-                <a href="#">Your Purchase History</a>
+                <a routerLink="/user/wishlist">
+                Your Wishlist Products</a>
               </li>
               <li role="separator" class="divider"></li>
               <li class="text-lg-right blue-on-hover">

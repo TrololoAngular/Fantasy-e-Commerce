@@ -1,0 +1,10 @@
+img {
+  width: 150px;
+  height: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+td{
+  vertical-align: middle!important;
+}

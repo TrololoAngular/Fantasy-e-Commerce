@@ -31,4 +31,10 @@ export class FanFictionStoryComponent implements OnInit {
       })
   }
 
+  addFictionToWishlist(){
+    this.productService.addFictionToWishlist(
+      JSON.parse(localStorage.getItem('user')).uid,
+      this.product.$key);
+  }
+
 }
