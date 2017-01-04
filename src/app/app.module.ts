@@ -53,6 +53,9 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
 import { CategoryFilterPipe } from './shared/pipes/categoryFilter.pipe';
 import { SortPipe } from './shared/pipes/sort.pipe';
 
+//Directives
+import { ClickOutsideDirective } from './shared/directives/click-outside.directive';
+
 
 @NgModule({
   declarations: [
@@ -85,7 +88,9 @@ import { SortPipe } from './shared/pipes/sort.pipe';
     IterateObjectsPipe,
     FilterPipe,
     SortPipe,
-    CategoryFilterPipe
+    CategoryFilterPipe,
+
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,

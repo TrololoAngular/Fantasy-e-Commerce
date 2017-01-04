@@ -17,8 +17,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
+  pageTitle: string;
 
-  pageTitle: string = "Fantasy Books";
   bookCategories: any[];
   jewelleryCategories: any[];
   clothingCategories: any[];
@@ -62,14 +62,10 @@ export class CategoriesComponent implements OnInit {
           this.productsService.getAllProducts()
             .subscribe(products => this.products = products);
         }
-
       });
+
     this.productsService.getSubcategoryByType('bookCategories')
-      .subscribe(categories => {
-        console.log("Categories: ", categories);
-
-        this.bookCategories = categories
-      });
+      .subscribe(categories => this.bookCategories = categories);
 
     this.productsService.getSubcategoryByType('jewelleryCategories')
       .subscribe(categories => this.jewelleryCategories = categories);
@@ -77,7 +73,17 @@ export class CategoriesComponent implements OnInit {
     this.productsService.getSubcategoryByType('clothingCategories')
       .subscribe(categories => this.clothingCategories = categories);
 
-
+    switch(this.mainCategory) {
+      case "books":
+        this.pageTitle = "Fantasy Books";
+        break;
+      case "jewellery":
+        this.pageTitle = "Fantasy Jewellery";
+        break;
+      case "category":
+        this.pageTitle = "Fantasy Clothing";
+        break;
+    }
   }
 
   setTitle(titleString: string, mainCategory: string, subCategory: string, subCategoryKey: string) {

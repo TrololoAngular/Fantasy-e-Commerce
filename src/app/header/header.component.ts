@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { AngularFire, AuthProviders } from 'angularfire2';
 import { ProductsService } from '../shared/services/products.service';
 import { AuthenticationService } from '../shared/services/authentication.service';
-
+import { ClickOutsideDirective } from '../shared/directives/click-outside.directive';
 declare var $: any;
 
 @Component({
@@ -59,6 +59,13 @@ export class HeaderComponent{
     this.auth.logout();
   }
 
+  close() {
+    this.isBooksCollapsed = true;
+    this.isJewelleryCollapsed = true;
+    this.isClothingCollapsed = true;
+    this.isMenuCollapsed = true;
+    this.isNotificationCollapsed = true;
+  }
 
   public collapsed(event: any): void {
   }

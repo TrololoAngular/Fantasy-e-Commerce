@@ -83,7 +83,7 @@ ul li:hover .dropdown-menu li a{
 .navbar-inverse .navbar-nav>.open>a:focus,
 .navbar-inverse .navbar-nav>.open>a:hover {
   color: #fff;
-  background-color: transparent;
+  /*background-color: transparent;*/
 }
 button.pointer {
   border: 0;
@@ -96,7 +96,17 @@ button.pointer {
 .blue-on-hover:hover *{
   color:#228d99;
 }
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover,
 .active {
+  border:none;
+  color:#fff;
   background: #228d99!important;
 }
 @media only screen and (max-device-width : 981px) {
