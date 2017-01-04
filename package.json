@@ -9,7 +9,9 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "preinstall":   "npm install -g http-server",
+    "postinstall":  "ng build"
   },
   "private": true,
   "dependencies": {
@@ -32,9 +34,7 @@
     "rxjs": "^5.0.1",
     "tether": "^1.4.0",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.7.2"
-  },
-  "devDependencies": {
+    "zone.js": "^0.7.2",
     "@angular/compiler-cli": "^2.3.1",
     "@types/jasmine": "2.5.38",
     "@types/jquery": "^2.0.34",
@@ -52,5 +52,9 @@
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
     "typescript": "~2.0.3"
+  },
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/TrololoAngular/Fantasy-e-Commerce"
   }
 }

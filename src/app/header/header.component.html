@@ -78,7 +78,9 @@
               <li><a routerLink="/categories/clothing/5">Warrior Clothing</a></li>
             </ul>
           </li>
-          <li routerLink="/fan-fiction" [routerLinkActive]="['active']">Fan Fiction</li>
+          <li class="menu-dropdown-button">
+            <a routerLink="/fan-fiction" [routerLinkActive]="['active']" class="pointer">Fan Fiction</a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li  *ngIf!="loggedIn">
