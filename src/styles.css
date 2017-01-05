@@ -33,6 +33,9 @@ button:focus{
 }
 
 /*List styles*/
+ul.Aligner{
+  padding:0px;
+}
 li{
   list-style: none;
 }
@@ -92,7 +95,7 @@ header li.open .dropdown-toggle::after {
   padding: 5px 50px;
   display: block;
   margin: auto;
-  width:180px;
+  width:200px;
 }
 .cta:hover,
 .cta:focus,
@@ -103,14 +106,9 @@ header li.open .dropdown-toggle::after {
   font-weight: 500;
   color:#fff;
 }
-.cta.small{
-  padding:5px 15px;
-  font-size:initial;
-}
 .cta-default {
   color: #228d99;
   border-color: #228d99;
-  width:auto;
 }
 .remove-item{
   background:transparent;

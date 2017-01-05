@@ -30,12 +30,12 @@
                 (collapsed)="collapsed($event)"
                 (expanded)="expanded($event)"
                 [collapse]="isBooksCollapsed">
-              <li><a routerLink="/categories/books/0">Dark Fantasy</a></li>
-              <li><a routerLink="/categories/books/1">Epic Fantasy</a></li>
-              <li><a routerLink="/categories/books/2">Romantic Fantasy</a></li>
-              <li><a routerLink="/categories/books/3">Sci-fi Fantasy</a></li>
-              <li><a routerLink="/categories/books/4">Vampire Fantasy</a></li>
-              <li><a routerLink="/categories/books/5">Young Adult Fantasy</a></li>
+              <li><a routerLink="/categories/books/0" routerLinkActive="active">Dark Fantasy</a></li>
+              <li><a routerLink="/categories/books/1" routerLinkActive="active">Epic Fantasy</a></li>
+              <li><a routerLink="/categories/books/2" routerLinkActive="active">Romantic Fantasy</a></li>
+              <li><a routerLink="/categories/books/3" routerLinkActive="active">Sci-fi Fantasy</a></li>
+              <li><a routerLink="/categories/books/4" routerLinkActive="active">Vampire Fantasy</a></li>
+              <li><a routerLink="/categories/books/5" routerLinkActive="active">Young Adult Fantasy</a></li>
             </ul>
           </li>
           <li routerLinkActive="active" class="active menu-dropdown-button">
@@ -50,12 +50,12 @@
                 (collapsed)="collapsed($event)"
                 (expanded)="expanded($event)"
                 [collapse]="isJewelleryCollapsed">
-              <li><a routerLink="/categories/jewellery/0">Fantasy Earrings</a></li>
-              <li><a routerLink="/categories/jewellery/1">Fantasy Bracelets</a></li>
-              <li><a routerLink="/categories/jewellery/2">Fantasy Necklaces</a></li>
-              <li><a routerLink="/categories/jewellery/3">Fantasy Rings</a></li>
-              <li><a routerLink="/categories/jewellery/4">Fantasy Tiaras</a></li>
-              <li><a routerLink="/categories/jewellery/5">Fantasy Brooches</a></li>
+              <li><a routerLink="/categories/jewellery/0" routerLinkActive="active">Fantasy Earrings</a></li>
+              <li><a routerLink="/categories/jewellery/1" routerLinkActive="active">Fantasy Bracelets</a></li>
+              <li><a routerLink="/categories/jewellery/2" routerLinkActive="active">Fantasy Necklaces</a></li>
+              <li><a routerLink="/categories/jewellery/3" routerLinkActive="active">Fantasy Rings</a></li>
+              <li><a routerLink="/categories/jewellery/4" routerLinkActive="active">Fantasy Tiaras</a></li>
+              <li><a routerLink="/categories/jewellery/5" routerLinkActive="active">Fantasy Brooches</a></li>
             </ul>
           </li>
           <li routerLinkActive="active" class="active menu-dropdown-button">
@@ -70,12 +70,12 @@
                 (collapsed)="collapsed($event)"
                 (expanded)="expanded($event)"
                 [collapse]="isClothingCollapsed">
-              <li><a routerLink="/categories/clothing/0">Elvish Clothing</a></li>
-              <li><a routerLink="/categories/clothing/1">Assassin Clothing</a></li>
-              <li><a routerLink="/categories/clothing/2">Ninja Clothin</a></li>
-              <li><a routerLink="/categories/clothing/3">Rogue Clothing</a></li>
-              <li><a routerLink="/categories/clothing/4">Gothic Clothing</a></li>
-              <li><a routerLink="/categories/clothing/5">Warrior Clothing</a></li>
+              <li><a routerLink="/categories/clothing/0" routerLinkActive="active">Elvish Clothing</a></li>
+              <li><a routerLink="/categories/clothing/1" routerLinkActive="active">Assassin Clothing</a></li>
+              <li><a routerLink="/categories/clothing/2" routerLinkActive="active">Ninja Clothin</a></li>
+              <li><a routerLink="/categories/clothing/3" routerLinkActive="active">Rogue Clothing</a></li>
+              <li><a routerLink="/categories/clothing/4" routerLinkActive="active">Gothic Clothing</a></li>
+              <li><a routerLink="/categories/clothing/5" routerLinkActive="active">Warrior Clothing</a></li>
             </ul>
           </li>
           <li class="menu-dropdown-button">
@@ -106,20 +106,16 @@
                 Signed in as: <strong>{{user.displayName}}</strong>
               </li>
               <li role="separator" class="divider"></li>
-              <!--<li>
-                <a routerLink="/fan-fiction/{{item.$key}}">
-                <a href="#">Your Profile</a>
-              </li>-->
               <li>
-                <a routerLink="/user/fan-fiction-favorite-stories">
+                <a routerLink="/user/fan-fiction-favorite-stories" routerLinkActive="active">
                   Your Favorite Stories</a>
               </li>
               <li>
-                <a routerLink="/user/shopping-cart">
+                <a routerLink="/user/shopping-cart"  routerLinkActive="active">
                 Your Shopping Cart</a>
               </li>
               <li>
-                <a routerLink="/user/wishlist">
+                <a routerLink="/user/wishlist"  routerLinkActive="active">
                 Your Wishlist Products</a>
               </li>
               <li role="separator" class="divider"></li>
@@ -132,7 +128,7 @@
             </ul>
           </li>
           <li>
-            <a routerLink="user/shopping-cart">
+            <a routerLink="user/shopping-cart" routerLinkActive="active">
               <i class="glyphicon glyphicon-shopping-cart"></i>
               Cart: {{cartQuantity}} items
             </a>

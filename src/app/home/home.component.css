@@ -75,6 +75,7 @@ h1 {
   margin-top: 100px;
 }
 
+
 @media only screen and (max-device-width : 1024px) {
   .parent-image-zoom{
     height:90vh;
@@ -90,5 +91,8 @@ h1 {
   }
   h1{
     font-size:30px;
+  }
+  a.carousel-image-link{
+    margin-right:10px;
   }
 }

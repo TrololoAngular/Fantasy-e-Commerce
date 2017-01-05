@@ -52,7 +52,6 @@ export class WishlistPreviewComponent implements OnInit {
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key,
       1);
-    this.removeProductFromWishlist(itemKey);
     this.toastr.info(`${this.product.title} has been moved to your cart.`, 'Fantastic!');
   }
 

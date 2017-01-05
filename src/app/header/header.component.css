@@ -40,7 +40,7 @@ header li.open .menu-dropdown-button,
 .menu-dropdown-button:hover,
 .dropdown-menu li:hover a
 {
-  color: #b0c9d4;
+  /*color: #b0c9d4;*/
   cursor:pointer;
 }
 ul li:hover .dropdown-menu li a{
@@ -108,6 +108,18 @@ button.pointer {
   border:none;
   color:#fff;
   background: #228d99!important;
+}
+
+.navbar-inverse .navbar-nav>.active>a .caret,
+.navbar-inverse .navbar-nav>.active>a:focus .caret,
+.navbar-inverse .navbar-nav>.active>a:hover .caret,
+.navbar-inverse .navbar-nav>.open>a .caret,
+.navbar-inverse .navbar-nav>.open>a:focus .caret,
+.navbar-inverse .navbar-nav>.open>a:hover .caret,
+.navbar-inverse .navbar-nav> li:hover a.active,
+.navbar-inverse .navbar-nav> li:hover a.active .caret{
+  color:#fff;
+
 }
 @media only screen and (max-device-width : 981px) {
   .navbar #mainNav.navbar-nav {

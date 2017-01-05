@@ -3,7 +3,6 @@ import { PageTitleComponent } from '../../shared/components/page-title.component
 import { ProductsService } from '../../shared/services/products.service';
 import { AuthenticationService } from '../../shared/services/authentication.service';
 
-
 @Component({
   selector: "fiction-wishlist",
   templateUrl: "./fiction-wishlist.component.html",
@@ -11,7 +10,6 @@ import { AuthenticationService } from '../../shared/services/authentication.serv
 })
 export class FictionWishlistComponent {
   isLoggedIn:boolean;
-
   isCartEmpty: boolean = false;
   pageTitle: string = "Your Fan Fiction Favorite Stories";
   productKeys: any[];
@@ -25,10 +23,8 @@ export class FictionWishlistComponent {
         this.isLoggedIn = true;
         this.productsService.getUserWishlistFictionIds()
           .subscribe(userWhishlistIds => {
-            console.log("userProductInfo: ", userWhishlistIds);
             this.productKeys = userWhishlistIds;
             this.fictionWishlistInfo = userWhishlistIds;
-
 
             if (this.productKeys.length == 0 || this.productKeys == null || this.productKeys == undefined) {
               this.isCartEmpty = true;
@@ -39,6 +35,7 @@ export class FictionWishlistComponent {
       } else {
         this.isLoggedIn = false;
       }
-    });
+    })
   }
+
 }

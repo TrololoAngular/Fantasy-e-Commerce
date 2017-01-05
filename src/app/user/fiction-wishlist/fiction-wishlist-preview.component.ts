@@ -10,12 +10,13 @@ import { ProductsService } from '../../shared/services/products.service';
 export class FictionWishlistPreviewComponent implements OnInit {
 
   product: any;
+  fictionWishlistKey: string;
 
   @Input("fictionWishlistInfo") set fictionWishlistInfo(_fictionWishlistInfo){
-    this.productsService.getFanFictionByKey(_fictionWishlistInfo.id) 
+    this.productsService.getFanFictionByKey(_fictionWishlistInfo.id)
       .subscribe(product => {
+        this.fictionWishlistKey = _fictionWishlistInfo.$key;
         this.product = product;
-        //console.log(this.product)
       });
   }
 
@@ -34,8 +35,9 @@ export class FictionWishlistPreviewComponent implements OnInit {
     return this.product.imageUrl;
   }
 
-  removeProductFromWishlist() {
-    console.log("Remove product from wishlist");
+  removeFictionFromFavourite(itemKey: string) {
+    console.log("Key: ", itemKey);
+    this.productsService.removeFictionFromFavourite(itemKey);
   }
 
 }

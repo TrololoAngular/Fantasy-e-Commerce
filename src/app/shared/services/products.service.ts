@@ -88,6 +88,11 @@ export class ProductsService {
       .remove(itemKey);
   }
 
+  removeFictionFromFavourite(itemKey: string){
+    this.af.database.list(`userWishListFiction/${JSON.parse(localStorage.getItem('user')).uid}`)
+      .remove(itemKey);
+  }
+
   updateItemQuantity(newItem, itemKey) {
     this.af.database.object(`userCartItems/${JSON.parse(localStorage.getItem('user')).uid}/${itemKey}`)
       .update(newItem);

@@ -63,3 +63,16 @@
 .product-bar li p.record-spotlight-title {
   margin: 0 0 3px;
 }
+.product-bar ul{
+  padding:0;
+}
+.product-bar li{
+  width: auto;
+  margin:0 25px;
+}
+.product-bar a {
+  margin-right:0px;
+}
+@media only screen and (max-device-width : 781px) {
+
+}

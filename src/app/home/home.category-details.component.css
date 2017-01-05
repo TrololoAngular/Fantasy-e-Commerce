@@ -40,6 +40,11 @@
   z-index:3;
   opacity:1;
 }
+
+.margin-0px {
+  margin:0;
+}
+
 @media only screen and (max-device-width : 981px) {
   .subcategory img{
     width:125px;
@@ -53,5 +58,8 @@
   .subcategory img{
     width:90px;
     height:90px;
+  }
+  .Aligner{
+    justify-content: flex-start;
   }
 }
