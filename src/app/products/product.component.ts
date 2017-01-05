@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewContainerRef, OnInit } from '@angular/core';
 import { ProductsService } from '../shared/services/products.service';
 // import { StarComponent } from '../shared/star.component';
 import { RatingModule } from "../shared/star.component";
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import 'rxjs/add/operator/switchMap';
 
 
@@ -19,9 +20,12 @@ export class ProductComponent implements OnInit {
   mainCategory: string;
 
   constructor(
+    public toastr: ToastsManager,
+    vRef: ViewContainerRef,
     private productService: ProductsService,
     private route: ActivatedRoute,
     private router: Router){
+      this.toastr.setRootViewContainerRef(vRef);
   }
 
   ngOnInit() {
@@ -32,7 +36,6 @@ export class ProductComponent implements OnInit {
             this.mainCategory =params['mainCategory'];
             this.product = product;
             this.productRating = product.rating;
-            console.log("Product: ", this.product);
           })
       })
   }
@@ -43,6 +46,7 @@ export class ProductComponent implements OnInit {
         JSON.parse(localStorage.getItem('user')).uid,
         this.product.$key,
         this.productQuantity);
+        this.toastr.info(`${this.product.title} has been added to your cart.`, 'Fantastic!');
   }
 
   addProductToWishlist(){
@@ -50,6 +54,9 @@ export class ProductComponent implements OnInit {
       this.mainCategory,
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key);
+      this.toastr.info(
+        `${this.product.title} has been added to your wishlist.`,`Dreamy!`);
+
   }
 
 

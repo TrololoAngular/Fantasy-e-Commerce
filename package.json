@@ -29,7 +29,6 @@
     "@types/jquery": "^2.0.34",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.24",
-    "angular2-click-outside": "^0.1.0",
     "angularfire2": "^2.0.0-beta.6",
     "bootstrap": "^4.0.0-alpha.5",
     "codelyzer": "~2.0.0-beta.1",

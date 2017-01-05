@@ -64,7 +64,7 @@ export class HeaderComponent{
     this.isJewelleryCollapsed = true;
     this.isClothingCollapsed = true;
     this.isMenuCollapsed = true;
-    this.isNotificationCollapsed = true;
+    this.isUserCollapsed = true;
   }
 
   public collapsed(event: any): void {

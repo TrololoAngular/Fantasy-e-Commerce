@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 /*resets*/
 a:focus,
-a:hover{
-  outline: none;
+a:hover,
+button:hover,
+button:focus{
+  outline: none!important;
 }
 .header-holder{
   margin-top:100px;

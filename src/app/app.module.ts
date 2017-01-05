@@ -8,6 +8,8 @@ import { CarouselModule } from 'ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { CollapseModule   } from 'ng2-bootstrap';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+
 //import { CategoriesModule } from './categories/categories.module';
 //import { CategoriesRoutingModule } from './categories/categories-routing.module';
 
@@ -99,6 +101,7 @@ import { ClickOutsideDirective } from './shared/directives/click-outside.directi
     AppRoutingModule,
     Ng2BootstrapModule,
     RatingModule,
+    ToastModule,
     //CategoriesModule,
     //CategoriesRoutingModule,
     CollapseModule.forRoot(),
@@ -112,7 +115,7 @@ import { ClickOutsideDirective } from './shared/directives/click-outside.directi
   ],
   providers: [
     AuthenticationService,
-    ProductsService
+    ProductsService,
   ],
   bootstrap: [AppComponent]
 })

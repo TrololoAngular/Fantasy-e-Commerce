@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ViewContainerRef, OnInit, Input } from '@angular/core';
 import { ProductsService } from '../../shared/services/products.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+
 
 @Component({
   selector: "[wishlist-preview]",
-//   inputs: ["productWishlistInfo"],
   templateUrl: "./wishlist-preview.component.html",
   styleUrls: ["./wishlist-preview.component.css"]
 })
@@ -14,7 +15,6 @@ export class WishlistPreviewComponent implements OnInit {
 
   @Input('itemKey') itemKey:string;
   @Input("productWishlistInfo") set productWishlistInfo(_productWishlistInfo){
-
     this.mainCategory = _productWishlistInfo.mainCategory;
     this.productsService.getProductByKey(_productWishlistInfo.mainCategory, _productWishlistInfo.id)
       .subscribe(product => {
@@ -23,7 +23,12 @@ export class WishlistPreviewComponent implements OnInit {
   }
 
 
-  constructor(private productsService: ProductsService) { }
+  constructor(
+    public toastr: ToastsManager,
+    vRef: ViewContainerRef,
+    private productsService: ProductsService) {
+      this.toastr.setRootViewContainerRef(vRef);
+  }
 
   ngOnInit() {
 
@@ -41,12 +46,14 @@ export class WishlistPreviewComponent implements OnInit {
     return this.product.price;
   }
 
-  addProductToCart(){
+  addProductToCart(itemKey){
     this.productsService.addProductToCart(
       this.mainCategory,
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key,
       1);
+    this.removeProductFromWishlist(itemKey);
+    this.toastr.info(`${this.product.title} has been moved to your cart.`, 'Fantastic!');
   }
 
   removeProductFromWishlist(itemKey: string) {

@@ -1,8 +1,7 @@
 img {
   height: 322px;
-  width: 300px;
+  width: 100%;
   object-fit: contain;
-  margin-left: 80px;
 }
 
 a{

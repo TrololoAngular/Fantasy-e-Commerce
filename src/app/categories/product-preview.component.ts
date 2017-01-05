@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ViewContainerRef, OnInit, Input } from '@angular/core';
 import { ProductsService } from '../shared/services/products.service';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-product-preview',
@@ -12,7 +13,12 @@ export class ProductPreviewComponent implements OnInit {
   @Input("mainCategory") mainCategory: string;
   @Input("subCategory") subCategory: string;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(
+    public toastr: ToastsManager,
+    vRef: ViewContainerRef,
+    private productsService: ProductsService) {
+      this.toastr.setRootViewContainerRef(vRef);
+  }
 
   get title(): string {
     return this.product.title;
@@ -44,6 +50,7 @@ export class ProductPreviewComponent implements OnInit {
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key,
       1);
+    this.toastr.info(`${this.product.title} has been added to your cart.`, 'Fantastic!');
   }
 
   addProductToWishlist(){
@@ -51,5 +58,6 @@ export class ProductPreviewComponent implements OnInit {
       this.mainCategory,
       JSON.parse(localStorage.getItem('user')).uid,
       this.product.$key);
+    this.toastr.info(`${this.product.title} has been added to your wishlist.`,`Dreamy!`);
   }
 }
