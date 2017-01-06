@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  constructor(){ }
+  constructor(private router: Router){ }
 
   ngOnInit() {
-    if(localStorage.getItem('cartItems') === null || localStorage.getItem('cartItems') === undefined) {
-      var cartItems = [];
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      document.body.scrollTop = 0;
+    });
   }
 }
