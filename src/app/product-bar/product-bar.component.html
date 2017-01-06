@@ -1,56 +1,18 @@
 <div class="product-bar">
   <ul class="Aligner wrap-content">
-    <li>
-      <a href="#" class="carousel-image-link">
-        <img class="full-shadow" src="http://prodimage.images-bn.com/pimages/9780062409201_p0_v5_s476x646.jpg">
-        <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
+    <li *ngFor="let product of (mostPopularProducts | sort: ['rating', 'descending'] | slice:0:4 )">
+      <a routerLink="/categories/books/{{product.bookCategory}}/products/{{product.$key}}" class="carousel-image-link">
+        <img class="full-shadow" src="{{product.imageUrl}}">
+        <a routerLink="/categories/books/{{product.bookCategory}}/products/{{product.$key}}" class="btn-quick-view gft-crd-view">Quick View</a>
       </a>
       <p class="record-spotlight-title">
-        <a href="#">News of the World</a>
+        <a routerLink="/categories/books/{{product.bookCategory}}/products/{{product.$key}}">{{product.title}}</a>
       </p>
-      by <a href="">Paulette Jiles</a>
+      by <em>{{product.author}}</em>
       <div class="ratings-display">
-        <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
+        <ai-star [(ngModel)]="product.rating" [readonly]="true"></ai-star>
       </div>
-    </li>
-    <li>
-    <a href="#" class="carousel-image-link">
-      <img class="full-shadow" src="http://prodimage.images-bn.com/pimages/9780062409201_p0_v5_s476x646.jpg">
-      <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
-    </a>
-    <p class="record-spotlight-title">
-      <a href="#">News of the World</a>
-    </p>
-    by <a href="">Paulette Jiles</a>
-    <div class="ratings-display">
-      <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
-    </div>
-  </li>
-    <li>
-      <a href="#" class="carousel-image-link">
-        <img class="full-shadow" src="http://prodimage.images-bn.com/pimages/9780062409201_p0_v5_s476x646.jpg">
-        <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
-      </a>
-      <p class="record-spotlight-title">
-        <a href="#">News of the World</a>
-      </p>
-      by <a href="">Paulette Jiles</a>
-      <div class="ratings-display">
-        <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
-      </div>
-    </li>
-    <li>
-      <a href="#" class="carousel-image-link">
-        <img class="full-shadow" src="http://prodimage.images-bn.com/pimages/9780062409201_p0_v5_s476x646.jpg">
-        <a href="#" class="btn-quick-view gft-crd-view">Quick View</a>
-      </a>
-      <p class="record-spotlight-title">
-        <a href="#">News of the World</a>
-      </p>
-      by <a href="">Paulette Jiles</a>
-      <div class="ratings-display">
-        <ai-star [(ngModel)]="starsCount" [readonly]="true"></ai-star>
-      </div>
+      <button class="add-to-cart-button" (click)="addProductToCart(product.title, product.$key, product.bookCategory)">Add to Cart</button>
     </li>
   </ul>
 </div>

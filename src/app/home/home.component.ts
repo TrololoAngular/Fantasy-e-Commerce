@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
 import { ProductsService } from '../shared/services/products.service';
-
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { ProductBarComponent } from './../product-bar/product-bar.component';
+import { ProductBarModule } from '../product-bar/product-bar.module';
 
 @Component ({
   selector: 'app-home',
@@ -13,6 +11,7 @@ import { ProductBarComponent } from './../product-bar/product-bar.component';
 })
 export class HomeComponent {
   mainCategories: any;
+  mostPopularProducts;
 
   constructor(private productsService: ProductsService){ }
 
@@ -21,6 +20,13 @@ export class HomeComponent {
     mainCategories$.subscribe(result => {
       this.mainCategories = result;
     });
+
+    this.productsService.getAllProducts()
+    .subscribe(products => {
+        this.mostPopularProducts = products;
+      })
   }
+
+
 
 }

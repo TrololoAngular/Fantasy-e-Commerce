@@ -8,7 +8,7 @@ import { CarouselModule } from 'ng2-bootstrap';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { CollapseModule   } from 'ng2-bootstrap';
-import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 //import { CategoriesModule } from './categories/categories.module';
 //import { CategoriesRoutingModule } from './categories/categories-routing.module';
@@ -36,10 +36,10 @@ import { FanFictionStoryComponent } from './fan-fiction-story/fan-fiction-story.
 import { FictionWishlistComponent } from './user/fiction-wishlist/fiction-wishlist.component';
 import { FictionWishlistPreviewComponent } from './user/fiction-wishlist/fiction-wishlist-preview.component';
 
+//import { ProductBarModule } from './product-bar/product-bar.module';
 import { ProductBarComponent } from './product-bar/product-bar.component';
 import { CartProductPreviewComponent } from './user/cart/cart-product-preview.component';
 import { PageTitleComponent } from './shared/components/page-title.component';
-//import { UserRatingComponent } from './products/user-rating.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 
 //Modules
@@ -80,7 +80,6 @@ import { ClickOutsideDirective } from './shared/directives/click-outside.directi
     FictionWishlistComponent,
     FictionWishlistPreviewComponent,
     ShoppingCartComponent,
-    //UserRatingComponent,
     CheckoutComponent,
 
     PageTitleComponent,
@@ -102,6 +101,7 @@ import { ClickOutsideDirective } from './shared/directives/click-outside.directi
     Ng2BootstrapModule,
     RatingModule,
     ToastModule,
+    //ProductBarModule,
     //CategoriesModule,
     //CategoriesRoutingModule,
     CollapseModule.forRoot(),

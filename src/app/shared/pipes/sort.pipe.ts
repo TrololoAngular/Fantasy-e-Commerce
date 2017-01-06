@@ -5,8 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortPipe {
   transform(products: any[], options: string[]): any[] {
-    const propertyName: string = options[0] || 'title';
+    const propertyName: string = options[0] || 'rating';
     const order: string = options[1] || 'ascending';
+
 
     if (!products || products.length === 0) {
       return undefined;
