@@ -12,6 +12,7 @@ export class CartProductPreviewComponent implements OnInit {
   productId: string;
   mainCategory: string;
   product: any;
+  subCategory: string;
 
   @Input('itemKey') itemKey:string;
   @Input("productInfo") set productInfo(_productInfo){
@@ -20,6 +21,8 @@ export class CartProductPreviewComponent implements OnInit {
     this.productsService.getProductByKey(_productInfo.mainCategory,_productInfo.id)
       .subscribe(product => {
         this.product = product;
+        this.productId = product.$key;
+        this.subCategory = product.bookCategory;
         this.productQuantity = _productInfo.quantity;
       });
   }
@@ -54,7 +57,12 @@ export class CartProductPreviewComponent implements OnInit {
       mainCategory: mainCategory
     };
 
-    this.productsService.updateItemQuantity(newItem, itemKey);
+    if(value > 0){
+      this.productsService.updateItemQuantity(newItem, itemKey);
+    } else {
+      this.removeProductFromCart(itemKey);
+    }
+
   }
 
 }

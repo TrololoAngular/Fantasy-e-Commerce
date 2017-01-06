@@ -7,7 +7,7 @@
   <img src="{{product?.imageUrl}}" />
 </td>
 <td>
-  <p>{{product?.title}}</p>
+  <p><a [routerLink]="['/categories', mainCategory, subCategory, 'products', productId ]">{{product?.title}}</a></p>
 </td>
 <td>
   {{product?.price | currency: "USD": true}}
@@ -19,7 +19,4 @@
 </td>
 <td>
   {{product?.price * productQuantity | currency: "USD": true}}
-</td>
-<td>
-  <button class="cta cta-default">Review Product</button>
 </td>

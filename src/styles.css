@@ -95,7 +95,7 @@ header li.open .dropdown-toggle::after {
   padding: 5px 50px;
   display: block;
   margin: auto;
-  width:200px;
+  width:250px;
 }
 .cta:hover,
 .cta:focus,
@@ -152,6 +152,12 @@ hr {
   color: #228d99;
   background-color: #228d99;
   border: none;
+}
+
+/*Section Styles*/
+.product-main{
+  border-right:4px solid #228d99;
+  padding-right:20px;
 }
 
 /*Responsive classes*/
