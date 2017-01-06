@@ -1,10 +1,14 @@
 img{
-    width: 290px;
-    height: 190px;
+  width: 100%;
+  height: auto;
+  border: none;
 }
-
 h1{
     font-size: 30px;
+}
+
+a{
+  color:#228d99;
 }
 
 p{
@@ -13,4 +17,7 @@ p{
 
 strong{
     font-size: 17px
+}
+.cta{
+  margin:0;
 }

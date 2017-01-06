@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ProductsService } from '../shared/services/products.service';
+import { RatingModule } from "../shared/star.component";
 
 @Component({
   selector: 'app-fan-finction',
@@ -12,7 +13,7 @@ export class FanFinctionComponent implements OnInit {
   pageTitle: string = "Fan Fiction";
   fanFiction: any[];
   products: any[];
-   
+
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {

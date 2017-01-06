@@ -23,7 +23,7 @@
   color: #fff;
   font-size: 15px;
   text-decoration: none;
-} 
+}
 
 #mainFooter a:hover{
   color: #49c3fb;
@@ -38,7 +38,7 @@ i{
   border-radius: 50px;
   border: 1.5px solid #fff;
   width: 25px;
-  text-align: center;  
+  text-align: center;
 }
 
 .footer-social-icons-circle:hover{
@@ -80,4 +80,9 @@ i{
 .copyright{
   color: #818692;
   font-size: 12px;
+}
+@media only screen and (max-device-width : 981px) {
+  #siteMap{
+    display:none;
+  }
 }

@@ -1,19 +1,23 @@
 <div class="header-holder"></div>
 <div class="container">
   <div class="row">
-    <ul *ngFor="let item of products">
+    <div *ngFor="let item of products" class="margin-top-50px">
       <div class="row">
-        <div class="col-sm-3">
-          <li>
+        <div class="col-sm-5">
+          <a routerLink="/fan-fiction/{{item.$key}}">
             <img src="{{item.imageUrl}}" class="img-thumbnail">
-          </li>
+          </a>
         </div>
         <div class="col-sm-6">
-          <li> <h1> <a routerLink="/fan-fiction/{{item.$key}}">  {{item.title}}  </a></h1></li>
-          <li>by <strong> {{item.author}} </strong></li>
-          <li> <p> {{item.description}}  </p> </li>
+          <h1>
+            <a routerLink="/fan-fiction/{{item.$key}}">{{item.title}}</a>
+          </h1>
+          <p>by <strong> {{item.author}} </strong></p>
+          <ai-star [(ngModel)]="item.rating" [readonly]="true"></ai-star>
+          <p> {{item.description}}</p>
+          <button routerLink="/fan-fiction/{{item.$key}}" class="cta cta-default">Read More</button>
         </div>
       </div>
-    </ul>
+    </div>
   </div>
 </div>
