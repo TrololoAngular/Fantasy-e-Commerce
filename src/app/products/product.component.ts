@@ -15,9 +15,11 @@ import 'rxjs/add/operator/switchMap';
 export class ProductComponent implements OnInit {
   pageTitle: string = "";
   product: any;
-  productRating:number;
+  productRating: number;
   productQuantity: number = 1;
   mainCategory: string;
+  isInCart: boolean = false;
+  isInWishlist: boolean = false;
 
   constructor(
     public toastr: ToastsManager,
@@ -41,22 +43,63 @@ export class ProductComponent implements OnInit {
   }
 
   addProductToCart(){
+    if(this.productIsInCart()) {
+      this.isInCart = true;
+      this.toastr.info("Product is already in cart");
+    } else{
+      this.isInCart = false;
       this.productService.addProductToCart(
         this.mainCategory,
         JSON.parse(localStorage.getItem('user')).uid,
         this.product.$key,
         this.productQuantity);
-        this.toastr.info(`${this.product.title} has been added to your cart.`, 'Fantastic!');
+      this.toastr.info(`${this.product.title} has been added to your cart.`, 'Fantastic!');
+    }
+  }
+
+  productIsInCart(): boolean {
+    var result = false;
+
+    this.productService.getUserCartProductsIds()
+      .subscribe(productsInfo => {
+        productsInfo.forEach(productInfo => {
+          if(productInfo.id == this.product.$key && productInfo.mainCategory == this.mainCategory) {
+            result = true;
+          }
+        });
+      });
+
+    return result;
   }
 
   addProductToWishlist(){
-    this.productService.addProductToWishlist(
-      this.mainCategory,
-      JSON.parse(localStorage.getItem('user')).uid,
-      this.product.$key);
+    if(this.productIsInWishlist()) {
+      this.isInWishlist = true;
+      this.toastr.info("Product is already in wishlist");
+    } else{
+      this.isInWishlist = false;
+      this.productService.addProductToWishlist(
+        this.mainCategory,
+        JSON.parse(localStorage.getItem('user')).uid,
+        this.product.$key);
       this.toastr.info(
         `${this.product.title} has been added to your wishlist.`,`Dreamy!`);
+    }
+  }
 
+  productIsInWishlist(): boolean {
+    var result = false;
+
+    this.productService.getUserWishlistProductsIds()
+      .subscribe(productsInfo => {
+        productsInfo.forEach(productInfo => {
+          if(productInfo.id == this.product.$key && productInfo.mainCategory == this.mainCategory) {
+            result = true;
+          }
+        });
+      });
+
+    return result;
   }
 
 

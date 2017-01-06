@@ -1,3 +1,9 @@
+a {
+  color:#228d99;
+}
+a:hover{
+  color: #228d99;
+}
 img {
   width: 150px;
   height: 100px;

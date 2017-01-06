@@ -15,6 +15,7 @@ export class FanFictionStoryComponent implements OnInit {
   product: any;
   productRating:number;
   pageTitle: string = "";
+  productKey: string;
 
   constructor(
     public toastr: ToastsManager,
@@ -31,18 +32,35 @@ export class FanFictionStoryComponent implements OnInit {
         this.productService.getFanFictionByKey(params['productKey'])
           .subscribe(product => {
             this.product = product;
+            this.productKey = product.$key;
             this.productRating = product.rating;
           })
       })
   }
 
   addFictionToWishlist(){
-    this.productService.addFictionToWishlist(
-      JSON.parse(localStorage.getItem('user')).uid,
-      this.product.$key);
-    this.toastr.info(`${this.product.title} has been moved to your favourite fan fiction list.`, 'Fantastic!');
+    if(this.storyIsInFavourites(this.product.$key)) {
+      this.toastr.info(`"${this.product.title}" is already in your favorites`);
+    } else{
+      this.productService.addFictionToWishlist(
+        JSON.parse(localStorage.getItem('user')).uid,
+        this.product.$key);
+      this.toastr.info(`"${this.product.title}" has been moved to your favourite fan fiction list.`, 'Fantastic!');
+    }
   }
 
+  storyIsInFavourites(productKey ): boolean {
+    var result = false;
 
+    this.productService.getUserWishlistFictionIds()
+      .subscribe(storiesInfo => {
+        storiesInfo.forEach(storyInfo => {
+          if(storyInfo.id == productKey) {
+            result = true;
+          }
+        });
+      });
 
+    return result;
+  }
 }

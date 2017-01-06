@@ -7,10 +7,12 @@
   <img src="{{product?.imageUrl}}" />
 </td>
 <td>
-  <p>{{product?.title}}</p>
+  <p>
+    <a [routerLink]="['/categories', mainCategory, subCategory, 'products', productKey]">{{product?.title}}</a>
+  </p>
 </td>
 <td>
-  {{product?.price}}
+  {{product?.price | currency: 'USD': true}}
 </td>
 <td>
   In Stock

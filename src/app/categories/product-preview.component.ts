@@ -13,6 +13,8 @@ export class ProductPreviewComponent implements OnInit {
   @Input("mainCategory") mainCategory: string;
   @Input("subCategory") subCategory: string;
 
+  isInCart: boolean = false;
+
   constructor(
     public toastr: ToastsManager,
     vRef: ViewContainerRef,
@@ -40,24 +42,36 @@ export class ProductPreviewComponent implements OnInit {
     return this.product.price;
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   addProductToCart(){
-    this.productsService.addProductToCart(
-      this.mainCategory,
-      JSON.parse(localStorage.getItem('user')).uid,
-      this.product.$key,
-      1);
-    this.toastr.info(`${this.product.title} has been added to your cart.`, 'Fantastic!');
+    if(this.productIsInCart()) {
+      this.isInCart = true;
+      this.toastr.info("Product is already in cart");
+    } else{
+      this.isInCart = false;
+      this.productsService.addProductToCart(
+        this.mainCategory,
+        JSON.parse(localStorage.getItem('user')).uid,
+        this.product.$key,
+        1);
+      this.toastr.info(`${this.product.title} has been added to your cart.`, 'Fantastic!');
+    }
   }
 
-  addProductToWishlist(){
-    this.productsService.addProductToWishlist(
-      this.mainCategory,
-      JSON.parse(localStorage.getItem('user')).uid,
-      this.product.$key);
-    this.toastr.info(`${this.product.title} has been added to your wishlist.`,`Dreamy!`);
+  productIsInCart(): boolean {
+    var result = false;
+
+    this.productsService.getUserCartProductsIds()
+      .subscribe(productsInfo => {
+        productsInfo.forEach(productInfo => {
+          if(productInfo.id == this.product.$key && productInfo.mainCategory == this.mainCategory) {
+            result = true;
+          }
+        });
+      });
+
+    return result;
   }
+
 }

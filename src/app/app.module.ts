@@ -29,6 +29,7 @@ import { ShoppingCartComponent } from './user/cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
 import { NotLoggedInComponent } from './shared/components/not-logged-in.component';
 import { NotFoundComponent } from './shared/components/404-not-found.component';
+import { ComingSoonComponent } from './shared/components/coming-soon.component';
 import { WishlistComponent } from './user/wishlist/wishlist.component';
 import { WishlistPreviewComponent } from './user/wishlist/wishlist-preview.component';
 import { FanFinctionComponent } from './fan-finction/fan-finction.component';
@@ -85,6 +86,7 @@ import { ClickOutsideDirective } from './shared/directives/click-outside.directi
     PageTitleComponent,
     NotLoggedInComponent,
     NotFoundComponent,
+    ComingSoonComponent,
 
     IterateObjectsPipe,
     FilterPipe,

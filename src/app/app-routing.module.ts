@@ -12,6 +12,7 @@ import { CheckoutComponent } from './user/checkout/checkout.component';
 import { FanFinctionComponent } from './fan-finction/fan-finction.component';
 import { FanFictionStoryComponent } from './fan-fiction-story/fan-fiction-story.component';
 import { FictionWishlistComponent } from './user/fiction-wishlist/fiction-wishlist.component';
+import { ComingSoonComponent } from './shared/components/coming-soon.component';
 
 const appRoutes: Routes = [
   {
@@ -43,6 +44,9 @@ const appRoutes: Routes = [
   },
   {
     path:"fan-fiction/:productKey", component: FanFictionStoryComponent
+  },
+  {
+    path:"coming-soon", component: ComingSoonComponent
   },
   {
     path:"", component: HomeComponent
